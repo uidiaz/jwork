@@ -1,14 +1,12 @@
 
-/**
- * Write a description of class Recruiter here.
- *
- * @author (your name)
- * @version (a version number or a date)
- */
 public class Recruiter
 {
     // instance variables - replace the example below with your own
-    private int x;
+    private int id;
+    private String name;
+    private String email;
+    private String phoneNumber;
+    
 
     /**
      * Constructor for objects of class Recruiter
@@ -19,15 +17,41 @@ public class Recruiter
         x = 0;
     }
 
-    /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
-     */
-    public int sampleMethod(int y)
+    public static void Recruiter()
     {
-        // put your code here
-        return x + y;
+        
+    }
+    
+    public static int Recruiter()
+    {
+        
+    }
+    public static String getName()
+    {
+        
+    }
+    public static String getEmail()
+    {
+        
+    }
+    public static String getPhoneNumber()
+    {
+        
+    }
+    public static void setId(int id)
+    {
+        
+    }
+    public static void setEmail(String email)
+    {
+        
+    }
+    public static void setName(String name)
+    {
+        
+    }
+    public static void setPhoneNumber(String phoneNumber)
+    {
+        
     }
 }
