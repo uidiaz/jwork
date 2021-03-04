@@ -14,44 +14,38 @@ public class Recruiter
     public Recruiter()
     {
         // initialise instance variables
-        x = 0;
     }
 
-    public static void Recruiter()
+    public static int getId()
     {
-        
+        return 0;
     }
     
-    public static int Recruiter()
+        public static String getName()
     {
-        
+        return "oop";
     }
-    public static String getName()
-    {
+    
         
-    }
     public static String getEmail()
     {
-        
+        return "oop";
     }
-    public static String getPhoneNumber()
+     public static String getPhoneNumber()
     {
-        
+        return "oop";
     }
-    public static void setId(int id)
+    public static void setid(int id)
     {
-        
     }
-    public static void setEmail(String email)
+    public static void setEmail(String Email)
     {
-        
     }
-    public static void setName(String name)
+    public static void setName(String Name)
     {
-        
     }
     public static void setPhoneNumber(String phoneNumber)
     {
-        
     }
+
 }
