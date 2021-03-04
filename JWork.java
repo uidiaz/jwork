@@ -19,6 +19,11 @@ public class jwork
         x = 0;
     }
 
+    public void main(String[] args) 
+    { 
+        System.out.println("Hello World"); 
+    } 
+
     /**
      * An example of a method - replace this comment with your own
      *
