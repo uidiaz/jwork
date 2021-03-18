@@ -1,3 +1,10 @@
+/**
+ * Merupakan class untuk Location yang dapat menambah lokasi.
+ *
+ * @author Diaz Ilyasa Azrurrafi Saiful
+ * @version 18 Maret 2021
+ */
+
 public class Location
 {
     

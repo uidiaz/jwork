@@ -1,3 +1,9 @@
+/**
+ * Merupakan class untuk Invoice untuk menambah informasi tagihan.
+ *
+ * @author Diaz Ilyasa Azrurrafi Saiful
+ * @version 18 Maret 2021
+ */
 
 public class Invoice
 {

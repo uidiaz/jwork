@@ -1,3 +1,9 @@
+/**
+ * Merupakan class untuk Database Job yang bisa menambah atau menghapus daftarnya.
+ *
+ * @author Diaz Ilyasa Azrurrafi Saiful
+ * @version 18 Maret 2021
+ */
 public class DatabaseJob
 {
     private String[] listJob;

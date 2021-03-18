@@ -1,3 +1,10 @@
+/**
+ * Merupakan class untuk Jobseeker yang dapat menambah informasi pencari kerja.
+ *
+ * @author Diaz Ilyasa Azrurrafi Saiful
+ * @version 18 Maret 2021
+ */
+
 public class Jobseeker
 {
 
