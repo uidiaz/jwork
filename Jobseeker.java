@@ -1,24 +1,15 @@
-/**
- * Write a description of class Jobseeker here.
- *
- * @author (your name)
- * @version (a version number or a date)
- */
 public class Jobseeker
 {
-    // instance variables - replace the example below with your own
+
     private int id;
     private String name;
     private String email;
     private String password;
     private String joinDate;
 
-    /**
-     * Constructor for objects of class Jobseeker
-     */
     public Jobseeker()
     {
-        // initialise instance variables
+
     }
 
     public static int getId()
@@ -44,7 +35,7 @@ public class Jobseeker
     public static void setId(int id)
     {
     }
-    public static void setName(String Name)
+    public static void setName(String name)
     {
     }
     public static void setEmail(String email)

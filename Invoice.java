@@ -1,21 +1,11 @@
 
-/**
- * Write a description of class Invoice here.
- *
- * @author (your name)
- * @version (a version number or a date)
- */
 public class Invoice
 {
-    // instance variables - replace the example below with your own
     private int id;
     private int idJob;
     private String date;
     private int totalFee;
 
-    /**
-     * Constructor for objects of class Invoice
-     */
     public Invoice(){
 
     }
@@ -44,11 +34,11 @@ public class Invoice
     
     }
     
-    public static String setDate(String date){
-        return "";
+    public static void setDate(String date){
+        
     }
     
-    public static String setTotalFee(int totalFee){
-        return "";
+    public static void setTotalFee(int totalFee){
+    
     }
 }

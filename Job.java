@@ -1,12 +1,7 @@
-/**
- * Write a description of class Job here.
- *
- * @author (your name)
- * @version (a version number or a date)
- */
+
 public class Job
 {
-    // instance variables - replace the example below with your own
+
     private int id;
     private String name;
     private int fee;
@@ -17,7 +12,7 @@ public class Job
      */
     public Job()
     {
-        // initialise instance variables
+
     }
 
     public static int getId()
@@ -52,6 +47,5 @@ public class Job
     {
         
     }
-    
     
 }
