@@ -4,48 +4,72 @@ public class Job
 
     private int id;
     private String name;
+    private Recruiter recruiter;
     private int fee;
     private String category;
+    
 
-    /**
-     * Constructor for objects of class Job
-     */
-    public Job()
+    public Job(int id, String name, Recruiter recruiter, int fee, String category)
     {
-
+        this.id = id;
+        this.name = name;
+        this.recruiter = recruiter;
+        this.fee= fee;
+        this.category = category;
     }
 
-    public static int getId()
+    public int getId()
     {
-        return 0;
+        return id;
     }
-    public static String getName()
+
+    public String getName()
     {
-        return "oop";
+        return name;
     }
-    public static int getFee()
+
+    public int getFee()
     {
-        return 0;
+        return fee;
     }
-    public static String getCategory()
+
+    public String getCategory()
     {
-        return "oop";
+        return category;
     }
-    public static void setId(int id)
+
+    public Recruiter getRecruiter()
     {
-       
+        return recruiter;
     }
-    public static void setName(String name)
+
+    public void setId(int id)
     {
-       
+       this.id = id;
     }
-    public static void setFee(int fee)
+
+    public void setName(String name)
     {
-       
+       this.name = name;
     }
-    public static void setCategory(String category)
+
+    public void setRecruiter(Recruiter recruiter)
     {
-        
+        this.recruiter = recruiter;
+    }
+
+    public void setFee(int fee)
+    {
+       this.fee = fee;
+    }
+
+    public void setCategory(String category)
+    {
+        this.category = category;
     }
     
+    public void printData()
+    {
+
+    }
 }
