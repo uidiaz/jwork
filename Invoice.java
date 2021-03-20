@@ -7,12 +7,20 @@
 
 public class Invoice
 {
-    private int id;
-    private int idJob;
-    private String date;
-    private int totalFee;
-    private Jobseeker jobseeker;
+    private int id;                 //variable id
+    private int idJob;              //variable idJob
+    private String date;            //variable date
+    private int totalFee;           //variable totalFee
+    private Jobseeker jobseeker;    //variable jobseeker
 
+    /**
+     * Untuk membuat objek baru
+     @param id id tagihan
+     @param idJob id pekerjaan dari tagihan 
+     @param date tanggal tagihan
+     @param totalFee total biaya tagihan
+     @param jobseeker data dari class Jobseeker
+     */
     public Invoice(int id, int idJob, String date, int totalFee, Jobseeker jobseeker)
     {
         this.id = id;
@@ -22,58 +30,105 @@ public class Invoice
         this.jobseeker = jobseeker;
     }
 
+    /**
+     * Sebuah getter untuk mendapatkan data id
+     * @return objek id
+     */
     public int getId()
     {
         return id;
     }
     
+    /**
+     * Sebuah getter untuk mendapatkan data idJob
+     * @return objek idJob
+     */
     public int getIdJob()
     {
         return idJob;
     }
     
+    /**
+     * Sebuah getter untuk mendapatkan data date
+     * @return objek date
+     */
     public String getDate()
     {
         return date;
     }
     
+    /**
+     * Sebuah getter untuk mendapatkan data totalFee
+     * @return objek date
+     */
     public int getTotalFee()
     {
         return totalFee;
     }
 
+    /**
+     * Sebuah getter untuk mendapatkan data dari class Jobseeker
+     * @return objek date
+     */
     public Jobseeker getJobseeker()
     {
         return jobseeker;
     }
     
+    /**
+     * Sebuah setter untuk mengisi ulang id dari objek
+     * @param id id dari tagihan
+     */
     public void setId(int id)
     {
         this.id = id;   
     }
     
+    /**
+     * Sebuah setter untuk mengisi ulang idJob dari objek
+     * @param idJobs id biaya tagihan
+     */
     public void setIdJobs(int idJobs)
     {
         this.idJob = idJob;
     }
     
+    /**
+     * Sebuah setter untuk mengisi ulang tanggal dari objek
+     * @param date id dari tagihan
+     */
     public void setDate(String date)
     {
         this.date = date;
     }
     
+    /**
+     * Sebuah setter untuk mengisi ulang total biaya dari objek
+     * @param totalFee totalFee dari tagihan
+     */
     public void setTotalFee(int totalFee)
     {
         this.totalFee = totalFee;
     }
 
+    /**
+     * Sebuah setter untuk mengganti data yang diambil dari class Jobseeker
+     * @param recruiter data objek dari class Jobseeker
+     */
     public void setJobseeker(Jobseeker jobseeker)
     {
         this.jobseeker = jobseeker;
     }
 
+    /**
+     * Untuk mengeprint data
+     */
     public void printData()
     {
-
+        System.out.println(getId());
+        System.out.println(getIdJob());
+        System.out.println(getDate());
+        System.out.println(getTotalFee());
+        System.out.println(getJobseeker());
     }
 }
