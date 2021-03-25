@@ -2,7 +2,7 @@
  * Merupakan class untuk Location yang dapat menambah lokasi.
  *
  * @author Diaz Ilyasa Azrurrafi Saiful
- * @version 18 Maret 2021
+ * @version 25 Maret 2021
  */
 
 public class Location
@@ -84,8 +84,8 @@ public class Location
      */
     public void printData()
     {
-        System.out.println(getProvince());  //print provinsi lokasi
-        System.out.println(getCity());
-        System.out.println(getDescription());
+        System.out.println("Province:" + getProvince());  //print provinsi lokasi
+        System.out.println("City:" + getCity());
+        System.out.println("Description:" + getDescription());
     }
 }

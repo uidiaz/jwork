@@ -6,18 +6,14 @@
  */
 public class DatabaseJob
 {
-    private String[] listJob;
+    private static String[] listJob;
 
-
-    public DatabaseJob()
-    {
-    }
 
     /**
      * boolean untuk menambah pekerjaan
      * @return nilai yang berbeda
      */
-    public boolean addJob(Job job)
+    public static boolean addJob(Job job)
     {
         return false;   
     }
@@ -26,7 +22,7 @@ public class DatabaseJob
      * boolean untuk menghapus pekerjaan
      * @return nilai yang berbeda
      */
-    public boolean removeJob(Job job)
+    public static boolean removeJob(Job job)
     {
         return false;
     }
@@ -35,7 +31,7 @@ public class DatabaseJob
      * Sebuah getter untuk mendapatkan data Job
      * @return nilai kosong
      */
-    public Job getJob()
+    public static Job getJob()
     {
         return null;
     }
@@ -44,8 +40,8 @@ public class DatabaseJob
      * Sebuah getter untuk mendapatkan data list dari Job
      * @return nilai kosong
      */
-    public String[] getListJob()
+    public static String[] getListJob()
     {
-        return null;
+        return listJob;
     }
 }

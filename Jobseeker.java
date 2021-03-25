@@ -2,7 +2,7 @@
  * Merupakan class untuk Jobseeker yang dapat menambah informasi pencari kerja.
  *
  * @author Diaz Ilyasa Azrurrafi Saiful
- * @version 18 Maret 2021
+ * @version 25 Maret 2021
  */
 
 public class Jobseeker
@@ -125,10 +125,10 @@ public class Jobseeker
      */
     public void printData()
     {
-        System.out.println(getId());
-        System.out.println(getName());  //print nama pencari kerja
-        System.out.println(getEmail());
-        System.out.println(getPassword());
-        System.out.println(joinDate());
+        System.out.println("ID:" + getId());
+        System.out.println("Name: " + getName());  //print nama pencari kerja
+        System.out.println("Email: " + getEmail());
+        System.out.println("Password: " + getPassword());
+        System.out.println("Join Date: " + joinDate());
     }
 }

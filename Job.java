@@ -2,7 +2,7 @@
  * Merupakan class untuk Job yang dapat menambah informasi pekerjaan.
  *
  * @author Diaz Ilyasa Azrurrafi Saiful
- * @version 18 Maret 2021
+ * @version 25 Maret 2021
  */
 
 public class Job
@@ -11,7 +11,7 @@ public class Job
     private String name;            //variable name
     private Recruiter recruiter;    //variable recruiter
     private int fee;                //variable fee
-    private String category;        //variable category
+    private JobCategory category;   //variable category
     
     /**
      * Untuk membuat objek baru
@@ -21,7 +21,7 @@ public class Job
      @param fee biaya pekerjaan
      @param category kategori pekerjaan
      */
-    public Job(int id, String name, Recruiter recruiter, int fee, String category)
+    public Job(int id, String name, Recruiter recruiter, int fee, JobCategory category)
     {
         this.id = id;
         this.name = name;
@@ -61,7 +61,7 @@ public class Job
      * Sebuah getter untuk mendapatkan data category
      * @return objek category
      */
-    public String getCategory()
+    public JobCategory getCategory()
     {
         return category;
     }
@@ -115,7 +115,7 @@ public class Job
      * Sebuah setter untuk mengisi ulang kategori dari objek
      * @param category kategori dari pekerjaan
      */
-    public void setCategory(String category)
+    public void setCategory(JobCategory category)
     {
         this.category = category;
     }
@@ -125,10 +125,12 @@ public class Job
      */
     public void printData()
     {
-        System.out.println(getId());
-        System.out.println(getName());
-        System.out.println(getRecruiter());
-        System.out.println(getFee());
-        System.out.println(getCategory());
+        System.out.println("===================== JOB =====================");
+        System.out.println("ID:" + getId());
+        System.out.println("Name: " + getName());
+        System.out.println("Recruiter: " + recruiter.getName());
+        System.out.println("City: " + recruiter.getLocation().getCity());
+        System.out.println("Fee: " + getFee());
+        System.out.println("Category: " + getCategory());
     }
 }

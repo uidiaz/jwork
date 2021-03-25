@@ -2,34 +2,30 @@
 /**
  * Write a description of class DatabaseRecruiter here.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Diaz Ilyasa Azrurrafi Saiful
+ * @version 25 Maret 2021
  */
 public class DatabaseRecruiter
 {
-    private String[] listRecuiter;
+    private static String[] listRecuiter;
 
-    public DatabaseRecruiter()
-    {
-    }
-
-    public boolean addRecruiter(Recruiter recruiter)
+    public static boolean addRecruiter(Recruiter recruiter)
     {
         return false;
     }
 
-    public boolean removeRecruiter(Recruiter recruiter)
+    public static boolean removeRecruiter(Recruiter recruiter)
     {
         return false;
     }
 
-    public Recruiter getRecruiter()
+    public static Recruiter getRecruiter()
     {
         return null;
     }
 
-    public String[] getListRecruiter()
+    public static String[] getListRecruiter()
     {
-        return null;
+        return listRecuiter;
     }
 }

@@ -2,7 +2,7 @@
  * Merupakan class untuk Recruiter yang dapat menambah informasi perekrut.
  *
  * @author Diaz Ilyasa Azrurrafi Saiful
- * @version 18 Maret 2021
+ * @version 25 Maret 2021
  */
 
 public class Recruiter
@@ -126,11 +126,11 @@ public class Recruiter
      */
     public void printData()
     {
-        System.out.println(getId());
-        System.out.println(getName());  //print nama perekrut
-        System.out.println(getEmail());
-        System.out.println(getPhoneNumber());
-        System.out.println(getLocation());
+        System.out.println("ID:" + getId());
+        System.out.println("Name: " + getName());  //print nama perekrut
+        System.out.println("Email: " + getEmail());
+        System.out.println("PhoneNumber: " + getPhoneNumber());
+        System.out.println("Location:" + getLocation());
     }
 
 }

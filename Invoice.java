@@ -2,7 +2,7 @@
  * Merupakan class untuk Invoice untuk menambah informasi tagihan.
  *
  * @author Diaz Ilyasa Azrurrafi Saiful
- * @version 18 Maret 2021
+ * @version 25 Maret 2021
  */
 
 public class Invoice
@@ -125,10 +125,10 @@ public class Invoice
      */
     public void printData()
     {
-        System.out.println(getId());
-        System.out.println(getIdJob());
-        System.out.println(getDate());
-        System.out.println(getTotalFee());
-        System.out.println(getJobseeker());
+        System.out.println("ID:" + getId());
+        System.out.println("ID Job:" + getIdJob());
+        System.out.println("Date:" + getDate());
+        System.out.println("Total Fee:" + getTotalFee());
+        System.out.println("Jobseeker:" + getJobseeker());
     }
 }
