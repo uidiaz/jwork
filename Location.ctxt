@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=Location
-comment0.text=\r\n\ Merupakan\ class\ untuk\ Location\ yang\ dapat\ menambah\ lokasi.\r\n\r\n\ @author\ Diaz\ Ilyasa\ Azrurrafi\ Saiful\r\n\ @version\ 18\ Maret\ 2021\r\n
+comment0.text=\r\n\ Merupakan\ class\ untuk\ Location\ yang\ dapat\ menambah\ lokasi.\r\n\r\n\ @author\ Diaz\ Ilyasa\ Azrurrafi\ Saiful\r\n\ @version\ 25\ Maret\ 2021\r\n
 comment1.params=province\ city\ description
 comment1.target=Location(java.lang.String,\ java.lang.String,\ java.lang.String)
 comment1.text=\r\n\ Untuk\ membuat\ objek\ baru\r\n\ \ \ \ \ @param\ province\ provisi\ lokasi\r\n\ \ \ \ \ @param\ city\ kota\ lokasi\r\n\ \ \ \ \ @param\ description\ deskripsi\ lokasi\r\n

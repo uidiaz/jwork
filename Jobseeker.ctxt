@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=Jobseeker
-comment0.text=\r\n\ Merupakan\ class\ untuk\ Jobseeker\ yang\ dapat\ menambah\ informasi\ pencari\ kerja.\r\n\r\n\ @author\ Diaz\ Ilyasa\ Azrurrafi\ Saiful\r\n\ @version\ 18\ Maret\ 2021\r\n
+comment0.text=\r\n\ Merupakan\ class\ untuk\ Jobseeker\ yang\ dapat\ menambah\ informasi\ pencari\ kerja.\r\n\r\n\ @author\ Diaz\ Ilyasa\ Azrurrafi\ Saiful\r\n\ @version\ 25\ Maret\ 2021\r\n
 comment1.params=id\ name\ email\ password\ joinDate
 comment1.target=Jobseeker(int,\ java.lang.String,\ java.lang.String,\ java.lang.String,\ java.lang.String)
 comment1.text=\r\n\ Untuk\ membuat\ objek\ baru\r\n\ \ \ \ \ @param\ id\ id\ pencari\ kerja\r\n\ \ \ \ \ @param\ name\ nama\ pencari\ kerja\r\n\ \ \ \ \ @param\ email\ email\ pencari\ kerja\r\n\ \ \ \ \ @param\ password\ password\ pencari\ kerja\r\n\ \ \ \ \ @param\ joinDate\ tanggal\ bekerja\ dari\ pencari\ kerja\r\n

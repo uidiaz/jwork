@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=DatabaseJob
-comment0.text=\r\n\ Merupakan\ class\ untuk\ Database\ Job\ yang\ bisa\ menambah\ atau\ menghapus\ daftarnya.\r\n\r\n\ @author\ Diaz\ Ilyasa\ Azrurrafi\ Saiful\r\n\ @version\ 18\ Maret\ 2021\r\n
+comment0.text=\r\n\ Merupakan\ class\ untuk\ Database\ Job\ yang\ bisa\ menambah\ atau\ menghapus\ daftarnya.\r\n\r\n\ @author\ Diaz\ Ilyasa\ Azrurrafi\ Saiful\r\n\ @version\ 25\ Maret\ 2021\r\n
 comment1.params=job
 comment1.target=boolean\ addJob(Job)
 comment1.text=\r\n\ boolean\ untuk\ menambah\ pekerjaan\r\n\ @return\ nilai\ yang\ berbeda\r\n
