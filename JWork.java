@@ -12,12 +12,10 @@ public class JWork
         Location location1 = new Location("DKI Jakarta", "Jakarta Pusat", "Apart");
         Recruiter recruiter1 = new Recruiter(1, "Diaz", "diaz.ilyasa@ui.ac.id", "08117776666", location1);
         Job job1 = new Job(2, "Senior Designer", recruiter1, 22000, JobCategory.WebDeveloper);
-        /** 
-         * Jobseeker jobseeker1 = new Jobseeker(3, "Adam", "Adam.Adam@ui.ac.id", "passworddddd", "18 Maret 2021");
-         * Invoice invoice1 = new Invoice(4, 5, "18 Maret 2021", 22000, jobseeker1);
-         */
+        Jobseeker jobseeker1 = new Jobseeker(3, "Adam", "Adam.Adam@ui.ac.id", "passworddddd", "18 Maret 2021");
+        Invoice invoice1 = new Invoice(4, job1.getId(), "27 Maret 2021", job1.getFee(), jobseeker1, PaymentType.BankPayment, InvoiceStatus.OnGoing);
         
-        job1.printData();
+        invoice1.printData();
     } 
 
 }

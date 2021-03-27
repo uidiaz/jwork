@@ -6,25 +6,16 @@
  */
 
 public enum PaymentType {
-    BankPayment {
-        @Override
-        public String toString()
-        {
-            return "Bank Payment";
-        }
-    },
-        
-    EwalletPayment {
-        @Override
-        public String toString()
-        {
-            return "E-wallet Payment";
-        }
-    };
+    BankPayment("Bank Payment"), 
+    EwalletPayment("E-wallet Payment");
     
-    public static void main(String[] args)
-    {
-        System.out.println(PaymentType.BankPayment);
-        System.out.println(PaymentType.EwalletPayment);
+    private String paymenttype;
+    
+    PaymentType(String paymenttype){
+        this.paymenttype = paymenttype;   
+    }
+
+    public String toString() {
+        return paymenttype;
     }
 }

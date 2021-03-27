@@ -12,6 +12,8 @@ public class Invoice
     private String date;            //variable date
     private int totalFee;           //variable totalFee
     private Jobseeker jobseeker;    //variable jobseeker
+    private PaymentType paymentType; 
+    private InvoiceStatus status;
 
     /**
      * Untuk membuat objek baru
@@ -21,13 +23,15 @@ public class Invoice
      @param totalFee total biaya tagihan
      @param jobseeker data dari class Jobseeker
      */
-    public Invoice(int id, int idJob, String date, int totalFee, Jobseeker jobseeker)
+    public Invoice(int id, int idJob, String date, int totalFee, Jobseeker jobseeker, PaymentType paymentType, InvoiceStatus status)
     {
         this.id = id;
         this.idJob = idJob;
         this.date = date;
         this.totalFee = totalFee;
         this.jobseeker = jobseeker;
+        this.paymentType = paymentType;
+        this.status = status;
     }
 
     /**
@@ -73,6 +77,11 @@ public class Invoice
     public Jobseeker getJobseeker()
     {
         return jobseeker;
+    }
+
+    public PaymentType getPaymentType()
+    {
+        return paymentType;
     }
     
     /**
@@ -120,15 +129,30 @@ public class Invoice
         this.jobseeker = jobseeker;
     }
 
+    public void setPaymentType(PaymentType paymentType)
+    {
+        this.paymentType = paymentType;
+    }
+
+    public void setInvoiceStatus(InvoiceStatus status)
+    {
+        this.status = status;
+    }
+
     /**
      * Untuk mengeprint data
      */
     public void printData()
     {
+        System.out.println("===================== JOB =====================");
         System.out.println("ID:" + getId());
         System.out.println("ID Job:" + getIdJob());
         System.out.println("Date:" + getDate());
+        System.out.println("Seeker:" + jobseeker.getName());
         System.out.println("Total Fee:" + getTotalFee());
-        System.out.println("Jobseeker:" + getJobseeker());
+        /**
+         * System.out.println("Jobseeker:" + getJobseeker());
+         */
+        System.out.println("Status:" + getJobseeker());
     }
 }
