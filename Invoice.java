@@ -145,14 +145,11 @@ public class Invoice
     public void printData()
     {
         System.out.println("===================== JOB =====================");
-        System.out.println("ID:" + getId());
-        System.out.println("ID Job:" + getIdJob());
-        System.out.println("Date:" + getDate());
-        System.out.println("Seeker:" + jobseeker.getName());
-        System.out.println("Total Fee:" + getTotalFee());
-        /**
-         * System.out.println("Jobseeker:" + getJobseeker());
-         */
-        System.out.println("Status:" + getJobseeker());
+        System.out.println("ID: " + getId());
+        System.out.println("ID Job: " + getIdJob());
+        System.out.println("Date: " + getDate());
+        System.out.println("Seeker: " + jobseeker.getName());
+        System.out.println("Fee: " + getTotalFee());
+        System.out.println("Status: " + status);
     }
 }
