@@ -1,7 +1,7 @@
 /**
  * Merupakan class untuk Ewallet Payment
  * @author Diaz Ilyasa Azrurrafi Saiful
- * @version 25 Maret 2021
+ * @version 01 Maret 2021
  */
 public class EwalletPayment extends Invoice
 {

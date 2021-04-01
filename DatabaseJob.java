@@ -2,7 +2,7 @@
  * Merupakan class untuk Database Job yang bisa menambah atau menghapus daftarnya.
  *
  * @author Diaz Ilyasa Azrurrafi Saiful
- * @version 25 Maret 2021
+ * @version  01 Maret 2021
  */
 public class DatabaseJob
 {

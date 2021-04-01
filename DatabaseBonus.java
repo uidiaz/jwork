@@ -2,7 +2,7 @@
 /**
  * Merupakan class untuk Database Bonus
  * @author Diaz Ilyasa Azrurrafi Saiful
- * @version 25 Maret 2021
+ * @version  01 Maret 2021
  */
 public class DatabaseBonus
 {
