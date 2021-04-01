@@ -8,12 +8,12 @@ public class EwalletPayment extends Invoice
     private Bonus bonus;
     private static final PaymentType PAYMENT_TYPE = PaymentType.EwalletPayment;
 
-    public EwalletPayment(int id, Job job, String date, int totalFee, Jobseeker jobseeker, InvoiceStatus invoiceStatus)
+    public EwalletPayment(int id, Job job, String date, Jobseeker jobseeker, InvoiceStatus invoiceStatus)
     {
         super(id, job, date, jobseeker, invoiceStatus);
     }
     
-    public EwalletPayment(int id, Job job, String date, int totalFee, Jobseeker jobseeker, Bonus bonus ,InvoiceStatus invoiceStatus)
+    public EwalletPayment(int id, Job job, String date, Jobseeker jobseeker, Bonus bonus ,InvoiceStatus invoiceStatus)
     {
         super(id, job, date, jobseeker, invoiceStatus);
         this.bonus = bonus;
