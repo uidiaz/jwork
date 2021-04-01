@@ -84,8 +84,10 @@ public class Location
      */
     public void printData()
     {
-        System.out.println("Province:" + getProvince());  //print provinsi lokasi
-        System.out.println("City:" + getCity());
-        System.out.println("Description:" + getDescription());
+        System.out.println(
+            "\nProvince:" + province +
+            "\nCity:" + city +
+            "\nDescription:" + description
+        );
     }
 }

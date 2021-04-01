@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.target=EwalletPayment
+comment0.text=\r\n\ Merupakan\ class\ untuk\ Ewallet\ Payment\r\n\ @author\ Diaz\ Ilyasa\ Azrurrafi\ Saiful\r\n\ @version\ 25\ Maret\ 2021\r\n
+comment1.params=id\ job\ date\ totalFee\ jobseeker\ invoiceStatus
+comment1.target=EwalletPayment(int,\ Job,\ java.lang.String,\ int,\ Jobseeker,\ InvoiceStatus)
+comment2.params=id\ job\ date\ totalFee\ jobseeker\ bonus\ invoiceStatus
+comment2.target=EwalletPayment(int,\ Job,\ java.lang.String,\ int,\ Jobseeker,\ Bonus,\ InvoiceStatus)
+comment3.params=
+comment3.target=PaymentType\ getPaymentType()
+comment4.params=bonus
+comment4.target=void\ setBonus(Bonus)
+comment5.params=
+comment5.target=void\ setTotalFee()
+comment6.params=
+comment6.target=void\ printData()
+numComments=7

@@ -125,12 +125,14 @@ public class Job
      */
     public void printData()
     {
-        System.out.println("===================== JOB =====================");
-        System.out.println("ID:" + getId());
-        System.out.println("Name: " + getName());
-        System.out.println("Recruiter: " + recruiter.getName());
-        System.out.println("City: " + recruiter.getLocation().getCity());
-        System.out.println("Fee: " + getFee());
-        System.out.println("Category: " + getCategory());
+        System.out.println(
+            "===================== JOB =====================" +
+            "\nID: " + id +
+            "\nName: " + name +
+            "\nRecruiter: " + recruiter.getName() +
+            "\nCity: " + recruiter.getLocation().getCity() +
+            "\nFee: " + fee +
+            "\nCategory: " + category
+        );
     }
 }

@@ -7,7 +7,6 @@
 
 public class Recruiter
 {
-
     private int id;                 //variable id
     private String name;            //variable name
     private String email;           //variable email
@@ -124,13 +123,14 @@ public class Recruiter
     /**
      * Untuk mengeprint data
      */
-    public void printData()
+        public void printData()
     {
-        System.out.println("ID:" + getId());
-        System.out.println("Name: " + getName());  //print nama perekrut
-        System.out.println("Email: " + getEmail());
-        System.out.println("PhoneNumber: " + getPhoneNumber());
-        System.out.println("Location:" + getLocation());
+        System.out.println(
+            "\nID: " + id +
+            "\nName: " + name +
+            "\nEmail: " + email +
+            "\nPhoneNumber: " + phoneNumber +
+            "\nLocation:" + location 
+        );
     }
-
 }

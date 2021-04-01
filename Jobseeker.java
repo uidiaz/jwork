@@ -125,10 +125,12 @@ public class Jobseeker
      */
     public void printData()
     {
-        System.out.println("ID:" + getId());
-        System.out.println("Name: " + getName());  //print nama pencari kerja
-        System.out.println("Email: " + getEmail());
-        System.out.println("Password: " + getPassword());
-        System.out.println("Join Date: " + joinDate());
+        System.out.println(
+            "\nID: " + id +
+            "\nName: " + name +
+            "\nEmail: " + email +
+            "\nPassword: " + password +
+            "\nJoin Date: " + joinDate 
+        );
     }
 }
