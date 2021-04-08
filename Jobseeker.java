@@ -1,3 +1,4 @@
+
 /**
  * Merupakan class untuk Jobseeker yang dapat menambah informasi pencari kerja.
  *
@@ -5,13 +6,20 @@
  * @version 01 Maret 2021
  */
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
+import java.text.SimpleDateFormat;
+
+
 public class Jobseeker
 {
     private int id;             //variable id
     private String name;        //variable name
     private String email;       //variable email
     private String password;    //variable password
-    private String joinDate;    //variable joinDate
+    private Calendar joinDate;    //variable joinDate
 
     /**
      * Untuk membuat objek baru
@@ -21,13 +29,31 @@ public class Jobseeker
      @param password password pencari kerja
      @param joinDate tanggal bekerja dari pencari kerja
      */
-    public Jobseeker(int id, String name, String email, String password, String joinDate)
+
+    public Jobseeker(int id, String name, String email, String password, Calendar joinDate)
     {
         this.id = id;
         this.name = name;
-        this.email = email;
-        this.password = password;
+        setEmail(email);
+        setPassword(password);
         this.joinDate = joinDate;
+    }
+
+    public Jobseeker(int id, String name, String email, String password, int year, int month, int dayOfMonth)
+    {
+        this.id = id;
+        this.name = name;
+        setEmail(email);
+        setPassword(password);
+        Calendar joinDate = new GregorianCalendar(year, month, dayOfMonth);
+    }
+
+    public Jobseeker(int id, String name, String email, String password)
+    {
+        this.id = id;
+        this.name = name;
+        setEmail(email);
+        setPassword(password);
     }
 
     /**
@@ -70,7 +96,7 @@ public class Jobseeker
      * Sebuah getter untuk mendapatkan data joinDate
      * @return objek joinDate
      */      
-     public String joinDate()
+     public Calendar getJoinDate()
     {
         return joinDate;
     }
@@ -97,40 +123,58 @@ public class Jobseeker
      * Sebuah setter untuk mengisi ulang email dari objek
      * @param email email dari pencari kerja
      */
-    public void setEmail(String email)
-    {
-        this.email = email;
+    public void setEmail(String email){
+        String regex = "\\A[a-z0-9!#$%&'*+/=?^_‘{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_‘{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\z";
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(email);
+        if(matcher.matches()){
+            this.email = email;
+        }
+        else{
+            this.email = "";
+        }
     }
 
     /**
      * Sebuah setter untuk mengisi ulang password dari objek
      * @param password password dari pencari kerja
      */
-    public void setPassword(String password)
-    {
-        this.password = password;
+    public void setPassword(String password) {
+        String regex = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)[a-zA-Z\\d]{6,}$";
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(password);
+        if(matcher.matches()){
+            this.password = password;
+        }
+        else{
+            this.password = "";
+        }
     }
 
     /**
      * Sebuah setter untuk mengisi ulang joinDate dari objek
      * @param joinDate tanggal bekerja dari pencari kerja
      */
-    public void setJoinDate(String joinDate)
+    public void setJoinDate(Calendar joinDate)
     {
         this.joinDate = joinDate;
     }
 
-    /**
-     * Untuk mengeprint data
-     */
-    public void printData()
+    public void setJoinDate(int year, int month, int dayOfMonth)
     {
-        System.out.println(
-            "\nID: " + id +
-            "\nName: " + name +
-            "\nEmail: " + email +
-            "\nPassword: " + password +
-            "\nJoin Date: " + joinDate 
-        );
+        this.joinDate = new GregorianCalendar(year, month, dayOfMonth);
+    }
+
+    @Override
+    public String toString() {
+        if (this.joinDate == null) {
+            return "Id = " + getId() + "\nNama = " + getName() + "\nEmail = " + getEmail() + "\nPassword = "
+                    + getPassword() + "\n";
+        } else {
+            SimpleDateFormat formattedDate = new SimpleDateFormat("dd-MMMM-yyyy");
+            String date = formattedDate.format(getJoinDate().getTime());
+            return "Id = " + getId() + "\nNama = " + getName() + "\nEmail = " + getEmail() + "\nPassword = "
+                    + getPassword() + "\nJoin Date = " + date + "\n";
+        }
     }
 }

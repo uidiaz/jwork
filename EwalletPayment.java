@@ -23,6 +23,11 @@ public class EwalletPayment extends Invoice
     { 
         return PAYMENT_TYPE; 
     }
+
+    public Bonus getBonus() 
+    { 
+        return bonus; 
+    }
     
     public void setBonus(Bonus bonus)
     {
@@ -51,7 +56,7 @@ public class EwalletPayment extends Invoice
         }
         setTotalFee();
         System.out.println(
-        "Fee: " + getTotalFee() +
+        "Fee: " + totalFee +
         "\nStatus: " + getInvoiceStatus() +
         "\nPayment Type: " + PAYMENT_TYPE);
         

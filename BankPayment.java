@@ -20,6 +20,7 @@ public class BankPayment extends Invoice
         this.adminFee = adminFee;
     }
 
+    @Override
     public PaymentType getPaymentType() 
     { 
         return PAYMENT_TYPE; 
@@ -35,6 +36,7 @@ public class BankPayment extends Invoice
         this.adminFee = adminFee;
     }
     
+    @Override
     public void setTotalFee(){
         if (adminFee > 0) {
             totalFee = getJob().getFee() - adminFee;
@@ -44,6 +46,7 @@ public class BankPayment extends Invoice
         }
     }
     
+    @Override
     public void printData() 
     {
         System.out.println(
@@ -52,8 +55,10 @@ public class BankPayment extends Invoice
             "\nJob: " + getJob().getName() +
             "\nDate: " + getDate() +
             "\nJob Seeker: " + getJobseeker().getName() +
-            "\nAdmin Fee: " + adminFee +
-            "\nFee: " + getTotalFee() +
+            "\nAdmin Fee: " + adminFee);
+        setTotalFee();
+        System.out.println(
+            "Fee: " + getTotalFee() +
             "\nStatus: " + getInvoiceStatus() +
             "\nPayment Type: " + PAYMENT_TYPE);
         

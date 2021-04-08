@@ -45,15 +45,6 @@ public abstract class Invoice
         return id;
     }
     
-    /**
-     * Sebuah getter untuk mendapatkan data idJob
-     * @return objek idJob
-     *
-     * public int getIdJob()
-     * {
-     *     return idJob;
-     * }
-     */
 
     public Job getJob()
     {
@@ -102,16 +93,6 @@ public abstract class Invoice
     {
         this.id = id;   
     }
-    
-    /**
-     * Sebuah setter untuk mengisi ulang idJob dari objek
-     * @param idJobs id biaya tagihan
-     *
-     * public void setIdJobs(int idJobs)
-     * {
-     *     this.idJob = idJob;
-     * }
-     */
 
     public void setJob(Job job)
     {
@@ -142,13 +123,6 @@ public abstract class Invoice
     {
         this.jobseeker = jobseeker;
     }
-
-    /**
-     * public void setPaymentType(PaymentType paymentType)
-     * {
-     *     this.paymentType = paymentType;
-     * }
-     */
 
     public void setInvoiceStatus(InvoiceStatus invoiceStatus)
     {

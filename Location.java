@@ -79,15 +79,8 @@ public class Location
         this.description = description;
     }
 
-    /**
-     * Untuk mengeprint data
-     */
-    public void printData()
-    {
-        System.out.println(
-            "\nProvince:" + province +
-            "\nCity:" + city +
-            "\nDescription:" + description
-        );
+    @Override
+    public String toString() {
+        return "Province = " + getProvince() + "\nCity = " + getCity() + "\nDescription = " + getDescription();
     }
 }

@@ -120,17 +120,9 @@ public class Recruiter
         this.location = location;
     }
 
-    /**
-     * Untuk mengeprint data
-     */
-        public void printData()
-    {
-        System.out.println(
-            "\nID: " + id +
-            "\nName: " + name +
-            "\nEmail: " + email +
-            "\nPhoneNumber: " + phoneNumber +
-            "\nLocation:" + location 
-        );
+    @Override
+    public String toString() {
+        return "Id = " + getId() + "\nNama = " + getName() + "\nEmail = " + getEmail() + "\nPhone Number = "
+                + getPhoneNumber() + "\nLocation = " + getLocation();
     }
 }

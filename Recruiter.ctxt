@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=Recruiter
-comment0.text=\r\n\ Merupakan\ class\ untuk\ Recruiter\ yang\ dapat\ menambah\ informasi\ perekrut.\r\n\r\n\ @author\ Diaz\ Ilyasa\ Azrurrafi\ Saiful\r\n\ @version\ 25\ Maret\ 2021\r\n
+comment0.text=\r\n\ Merupakan\ class\ untuk\ Recruiter\ yang\ dapat\ menambah\ informasi\ perekrut.\r\n\r\n\ @author\ Diaz\ Ilyasa\ Azrurrafi\ Saiful\r\n\ @version\ 01\ Maret\ 2021\r\n
 comment1.params=id\ name\ email\ phoneNumber\ location
 comment1.target=Recruiter(int,\ java.lang.String,\ java.lang.String,\ java.lang.String,\ Location)
 comment1.text=\r\n\ Untuk\ membuat\ objek\ baru\r\n\ \ \ \ \ @param\ id\ id\ perekrut\r\n\ \ \ \ \ @param\ name\ nama\ perekrut\r\n\ \ \ \ \ @param\ email\ email\ perekrut\r\n\ \ \ \ \ @param\ phoneNumber\ nomor\ hp\ perekrut\r\n\ \ \ \ \ @param\ location\ data\ dari\ class\ Location\r\n
@@ -11,8 +11,7 @@ comment11.params=location
 comment11.target=void\ setLocation(Location)
 comment11.text=\r\n\ Sebuah\ setter\ untuk\ mengganti\ data\ yang\ diambil\ dari\ class\ Location\r\n\ @param\ location\ lokasi\ perekrut\r\n
 comment12.params=
-comment12.target=void\ printData()
-comment12.text=\r\n\ Untuk\ mengeprint\ data\r\n
+comment12.target=java.lang.String\ toString()
 comment2.params=
 comment2.target=int\ getId()
 comment2.text=\r\n\ Sebuah\ getter\ untuk\ mendapatkan\ data\ id\r\n\ @return\ objek\ id\r\n

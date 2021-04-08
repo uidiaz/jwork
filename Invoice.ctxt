@@ -1,12 +1,11 @@
 #BlueJ class context
 comment0.target=Invoice
-comment0.text=\r\n\ Merupakan\ class\ untuk\ Invoice\ untuk\ menambah\ informasi\ tagihan.\r\n\r\n\ @author\ Diaz\ Ilyasa\ Azrurrafi\ Saiful\r\n\ @version\ 25\ Maret\ 2021\r\n
+comment0.text=\r\n\ Merupakan\ class\ untuk\ Invoice\ untuk\ menambah\ informasi\ tagihan.\r\n\r\n\ @author\ Diaz\ Ilyasa\ Azrurrafi\ Saiful\r\n\ @version\ 01\ Maret\ 2021\r\n
 comment1.params=id\ job\ date\ jobseeker\ invoiceStatus
 comment1.target=Invoice(int,\ Job,\ java.lang.String,\ Jobseeker,\ InvoiceStatus)
 comment1.text=\r\n\ Untuk\ membuat\ objek\ baru\r\n\ @param\ id\ id\ tagihan\r\n\ @param\ idJob\ id\ pekerjaan\ dari\ tagihan\ \r\n\ @param\ date\ tanggal\ tagihan\r\n\ @param\ totalFee\ total\ biaya\ tagihan\r\n\ @param\ jobseeker\ data\ dari\ class\ Jobseeker\r\n
 comment10.params=job
 comment10.target=void\ setJob(Job)
-comment10.text=\r\n\ Sebuah\ setter\ untuk\ mengisi\ ulang\ idJob\ dari\ objek\r\n\ @param\ idJobs\ id\ biaya\ tagihan\r\n\r\n\ public\ void\ setIdJobs(int\ idJobs)\r\n\ {\r\n\ \ \ \ \ this.idJob\ \=\ idJob;\r\n\ }\r\n
 comment11.params=date
 comment11.target=void\ setDate(java.lang.String)
 comment11.text=\r\n\ Sebuah\ setter\ untuk\ mengisi\ ulang\ tanggal\ dari\ objek\r\n\ @param\ date\ id\ dari\ tagihan\r\n
@@ -18,7 +17,6 @@ comment13.target=void\ setJobseeker(Jobseeker)
 comment13.text=\r\n\ Sebuah\ setter\ untuk\ mengganti\ data\ yang\ diambil\ dari\ class\ Jobseeker\r\n\ @param\ recruiter\ data\ objek\ dari\ class\ Jobseeker\r\n
 comment14.params=invoiceStatus
 comment14.target=void\ setInvoiceStatus(InvoiceStatus)
-comment14.text=\r\n\ public\ void\ setPaymentType(PaymentType\ paymentType)\r\n\ {\r\n\ \ \ \ \ this.paymentType\ \=\ paymentType;\r\n\ }\r\n
 comment15.params=
 comment15.target=void\ printData()
 comment15.text=\r\n\ Untuk\ mengeprint\ data\r\n
@@ -27,7 +25,6 @@ comment2.target=int\ getId()
 comment2.text=\r\n\ Sebuah\ getter\ untuk\ mendapatkan\ data\ id\r\n\ @return\ objek\ id\r\n
 comment3.params=
 comment3.target=Job\ getJob()
-comment3.text=\r\n\ Sebuah\ getter\ untuk\ mendapatkan\ data\ idJob\r\n\ @return\ objek\ idJob\r\n\r\n\ public\ int\ getIdJob()\r\n\ {\r\n\ \ \ \ \ return\ idJob;\r\n\ }\r\n
 comment4.params=
 comment4.target=java.lang.String\ getDate()
 comment4.text=\r\n\ Sebuah\ getter\ untuk\ mendapatkan\ data\ date\r\n\ @return\ objek\ date\r\n

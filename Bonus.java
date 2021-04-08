@@ -61,7 +61,7 @@ public class Bonus
 
     public void setReferralCode(String referralCode)
     {
-        this.active = active;
+        this.referralCode = referralCode;
     }
 
     public void setExtraFee(int extraFee)
@@ -79,16 +79,10 @@ public class Bonus
         this.active = active;
     }
 
-    public void printData()
-    {
-        System.out.println(
-            "===================== JOB =====================" +
-            "\nID: " + id +
-            "\nReferreal Code: " + referralCode +
-            "\nExtra Fee: " + extraFee +
-            "\nMinimal Total Fee: " + minTotalFee +
-            "\nActive: " + active
-        );
+    @Override
+    public String toString() {
+        return "Id = " + getId() + "\nReferral Code = " + getReferralCode() + "\nExtra Fee = " + getExtraFee()
+                + "\nMin Total Fee= " + getMinTotalFee() + "\nActive Status =  " + getActive();
     }
     
 }

@@ -120,19 +120,10 @@ public class Job
         this.category = category;
     }
     
-    /**
-     * Untuk mengeprint data
-     */
-    public void printData()
-    {
-        System.out.println(
-            "===================== JOB =====================" +
-            "\nID: " + id +
-            "\nName: " + name +
-            "\nRecruiter: " + recruiter.getName() +
-            "\nCity: " + recruiter.getLocation().getCity() +
-            "\nFee: " + fee +
-            "\nCategory: " + category
-        );
+    @Override
+    public String toString() {
+        return "Id = " + getId() + "\nName = " + getName() + "\nRecruiter = " + getRecruiter() + "\nCity= "
+                + getRecruiter().getLocation().getCity() + "\nFee = " + getFee() + "\nCategory = " + getCategory();
+
     }
 }
