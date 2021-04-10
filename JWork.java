@@ -13,7 +13,7 @@ public class JWork
         Location location1 = new Location("DKI Jakarta", "Jakarta Pusat", "Apart");
         Recruiter recruiter1 = new Recruiter(1, "Diaz", "diaz.ilyasa@ui.ac.id", "08117776666", location1);
         Job job1 = new Job(2, "Senior Designer", recruiter1, 22000, JobCategory.WebDeveloper);
-        Jobseeker jobseeker1 = new Jobseeker(3, "Adam", "Adam.Adam@ui.ac.id", "passworddddd", "18 Maret 2021");
+        // Jobseeker jobseeker1 = new Jobseeker(3, "Adam", "Adam.Adam@ui.ac.id", "passworddddd", "18 Maret 2021");
         Bonus bonus1 = new Bonus(11, "BonusPay", 20000, 10000, true);
         Bonus bonus2 = new Bonus(12, "BonusPay", 20000, 30000, true);
 
