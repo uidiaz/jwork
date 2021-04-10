@@ -30,8 +30,8 @@ public class JWork
         EwalletPayment e2 = new EwalletPayment(2, job1, jobseeker1, bonus1, InvoiceStatus.Finished);
         EwalletPayment e3 = new EwalletPayment(3, job1, jobseeker1, bonus2, InvoiceStatus.Finished);
 
-        BankPayment bp1 = new BankPayment(8, job1, "6 April 2021", jobseeker1, InvoiceStatus.Finished, 0);
-        BankPayment bp2 = new BankPayment(9, job1, "7 April 2021", jobseeker1, InvoiceStatus.Finished, 9000);
+        BankPayment bp1 = new BankPayment(8, job1, jobseeker1, InvoiceStatus.Finished, 0);
+        BankPayment bp2 = new BankPayment(9, job1, jobseeker1, InvoiceStatus.Finished, 9000);
 
         e1.setTotalFee();
         e2.setTotalFee();
