@@ -1,3 +1,4 @@
+import java.text.SimpleDateFormat;
 
 /**
  * Merupakan class untuk Bank Payment
@@ -9,14 +10,14 @@ public class BankPayment extends Invoice
     private static final PaymentType PAYMENT_TYPE = PaymentType.BankPayment;
     private int adminFee;
 
-    public BankPayment(int id, Job job, String date, Jobseeker jobseeker, InvoiceStatus invoiceStatus)
+    public BankPayment(int id, Job job, Jobseeker jobseeker, InvoiceStatus invoiceStatus)
     {
-        super(id, job, date, jobseeker, invoiceStatus);
+        super(id, job, jobseeker, invoiceStatus);
     }
     
-    public BankPayment(int id, Job job, String date, Jobseeker jobseeker ,InvoiceStatus invoiceStatus, int adminFee)
+    public BankPayment(int id, Job job, Jobseeker jobseeker ,InvoiceStatus invoiceStatus, int adminFee)
     {
-        super(id, job, date, jobseeker, invoiceStatus);
+        super(id, job, jobseeker, invoiceStatus);
         this.adminFee = adminFee;
     }
 
@@ -47,22 +48,21 @@ public class BankPayment extends Invoice
     }
     
     @Override
-    public void printData() 
+    public String toString()
     {
-        System.out.println(
-            "===================== INVOICE =====================" +
-            "\nID: " + getId() +
-            "\nJob: " + getJob().getName() +
-            "\nDate: " + getDate() +
-            "\nJob Seeker: " + getJobseeker().getName() +
-            "\nAdmin Fee: " + adminFee);
-        setTotalFee();
-        System.out.println(
-            "Fee: " + getTotalFee() +
-            "\nStatus: " + getInvoiceStatus() +
-            "\nPayment Type: " + PAYMENT_TYPE);
-        
-        
+        SimpleDateFormat formattedDate = new SimpleDateFormat("dd-MMMM-yyyy");
+        String date = formattedDate.format(getDate().getTime());
+        if (adminFee != 0)
+        {
+            return ("Id = " + getId() + "\nJob = " + getJob().getName() + "\nDate = " + date + "\nJob Seeker = "
+                + getJobseeker().getName() + "Admin Fee = " + adminFee + "\nTotal Fee = " + getTotalFee() + "\nStatus = " + getInvoiceStatus() + "\nPayment = " + PAYMENT_TYPE);
+        }
+        else
+        {
+            return ("Id = " + getId() + "\nJob = " + getJob().getName() + "\nDate = " + date + "\nJob Seeker = "
+                + getJobseeker().getName()+ "\nTotal Fee = " + getTotalFee() + "\nStatus = " + getInvoiceStatus() + "\nPayment = " + PAYMENT_TYPE);
+        }
     }
 }
+
 

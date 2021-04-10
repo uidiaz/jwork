@@ -166,15 +166,16 @@ public class Jobseeker
     }
 
     @Override
-    public String toString() {
-        if (this.joinDate == null) {
+    public String toString() 
+    {
+    if (this.joinDate == null) {
             return "Id = " + getId() + "\nNama = " + getName() + "\nEmail = " + getEmail() + "\nPassword = "
-                    + getPassword() + "\n";
+                    + getPassword();
         } else {
             SimpleDateFormat formattedDate = new SimpleDateFormat("dd-MMMM-yyyy");
             String date = formattedDate.format(getJoinDate().getTime());
             return "Id = " + getId() + "\nNama = " + getName() + "\nEmail = " + getEmail() + "\nPassword = "
-                    + getPassword() + "\nJoin Date = " + date + "\n";
+                    + getPassword() + "\nJoin Date = " + date;
         }
     }
 }

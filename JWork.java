@@ -17,12 +17,7 @@ public class JWork
         Bonus bonus1 = new Bonus(11, "BonusPay", 20000, 10000, true);
         Bonus bonus2 = new Bonus(12, "BonusPay", 20000, 30000, true);
 
-        // EwalletPayment e1 = new EwalletPayment(1, job1, "3 April 2021", jobseeker1, InvoiceStatus.Finished);
-        // EwalletPayment e2 = new EwalletPayment(2, job1, "4 April 2021", jobseeker1, bonus1, InvoiceStatus.Finished);
-        // EwalletPayment e3 = new EwalletPayment(3, job1, "5 April 2021", jobseeker1, bonus2, InvoiceStatus.Finished);
 
-        // BankPayment bp1 = new BankPayment(8, job1, "6 April 2021", jobseeker1, InvoiceStatus.Finished, 0);
-        // BankPayment bp2 = new BankPayment(9, job1, "7 April 2021", jobseeker1, InvoiceStatus.Finished, 5000);
         
         Jobseeker jobseeker2 = new Jobseeker(1, "Name one", "diaz@ui.ac.id", "Passw0rd1", new GregorianCalendar(2000, 8, 15));
         Jobseeker jobseeker3 = new Jobseeker(2, "Name two", "diaz.ilyasa@ui.ac.id", "Passw0rd2", 2000, 4, 8);
@@ -30,6 +25,24 @@ public class JWork
         System.out.println(jobseeker2.toString());
         System.out.println(jobseeker3.toString());
         System.out.println(jobseeker4.toString());
+
+        EwalletPayment e1 = new EwalletPayment(1, job1, jobseeker1, InvoiceStatus.Finished);
+        EwalletPayment e2 = new EwalletPayment(2, job1, jobseeker1, bonus1, InvoiceStatus.Finished);
+        EwalletPayment e3 = new EwalletPayment(3, job1, jobseeker1, bonus2, InvoiceStatus.Finished);
+
+        BankPayment bp1 = new BankPayment(8, job1, "6 April 2021", jobseeker1, InvoiceStatus.Finished, 0);
+        BankPayment bp2 = new BankPayment(9, job1, "7 April 2021", jobseeker1, InvoiceStatus.Finished, 9000);
+
+        e1.setTotalFee();
+        e2.setTotalFee();
+        e3.setTotalFee();
+        bp1.setTotalFee();
+        bp2.setTotalFee();
+
+        System.out.println("\n==================== E-Wallet ====================");
+        System.out.println(e1);
+        System.out.println("\n==================== Bank ====================");
+        System.out.println(bp2);
     } 
 
 }

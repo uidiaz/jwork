@@ -1,3 +1,5 @@
+import java.text.SimpleDateFormat;
+
 /**
  * Merupakan class untuk Ewallet Payment
  * @author Diaz Ilyasa Azrurrafi Saiful
@@ -8,14 +10,14 @@ public class EwalletPayment extends Invoice
     private Bonus bonus;
     private static final PaymentType PAYMENT_TYPE = PaymentType.EwalletPayment;
 
-    public EwalletPayment(int id, Job job, String date, Jobseeker jobseeker, InvoiceStatus invoiceStatus)
+    public EwalletPayment(int id, Job job, Jobseeker jobseeker, InvoiceStatus invoiceStatus)
     {
-        super(id, job, date, jobseeker, invoiceStatus);
+        super(id, job, jobseeker, invoiceStatus);
     }
     
-    public EwalletPayment(int id, Job job, String date, Jobseeker jobseeker, Bonus bonus ,InvoiceStatus invoiceStatus)
+    public EwalletPayment(int id, Job job, Jobseeker jobseeker, Bonus bonus ,InvoiceStatus invoiceStatus)
     {
-        super(id, job, date, jobseeker, invoiceStatus);
+        super(id, job, jobseeker, invoiceStatus);
         this.bonus = bonus;
     }
 
@@ -43,23 +45,19 @@ public class EwalletPayment extends Invoice
         }
     }
     
-    public void printData() 
+    @Override
+    public String toString()
     {
-        System.out.println(
-            "===================== INVOICE =====================" +
-            "\nID: " + getId() +
-            "\nJob: " + getJob().getName() +
-            "\nDate: " + getDate() +
-            "\nJob Seeker: " + getJobseeker().getName());
-            if (bonus != null && (bonus.getActive() == true) && getJob().getFee() > bonus.getMinTotalFee()) {
-            System.out.println("ReferralCode: " + bonus.getReferralCode());
+        SimpleDateFormat formattedDate = new SimpleDateFormat("dd-MMMM-yyyy");
+        String date = formattedDate.format(getDate().getTime());
+        if ((bonus != null) && (bonus.getActive() == true) && (getJob().getFee() > bonus.getMinTotalFee()))
+        {
+            return ("Id = " + getId() + "\nJob = " + getJob().getName() + "\nDate = " + date + "\nJob Seeker = "
+                + getJobseeker().getName() + "Referral Code = " + bonus.getReferralCode() + "\nTotal Fee = " + getTotalFee() + "\nStatus = " + getInvoiceStatus() + "\nPayment = " + PAYMENT_TYPE);
+        }else
+        {
+            return ("Id = " + getId() + "\nJob = " + getJob().getName() + "\nDate = " + date + "\nJob Seeker = "
+                + getJobseeker().getName()+ "\nTotal Fee = " + getTotalFee() + "\nStatus = " + getInvoiceStatus() + "\nPayment = " + PAYMENT_TYPE);
         }
-        setTotalFee();
-        System.out.println(
-        "Fee: " + totalFee +
-        "\nStatus: " + getInvoiceStatus() +
-        "\nPayment Type: " + PAYMENT_TYPE);
-        
-        
     }
 }

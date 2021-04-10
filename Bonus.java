@@ -80,7 +80,8 @@ public class Bonus
     }
 
     @Override
-    public String toString() {
+    public String toString() 
+    {
         return "Id = " + getId() + "\nReferral Code = " + getReferralCode() + "\nExtra Fee = " + getExtraFee()
                 + "\nMin Total Fee= " + getMinTotalFee() + "\nActive Status =  " + getActive();
     }
