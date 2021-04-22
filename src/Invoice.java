@@ -1,17 +1,18 @@
-import java.util.Calendar;
-import java.util.GregorianCalendar;
-
 /**
  * Merupakan class untuk Invoice untuk menambah informasi tagihan.
  *
  * @author Diaz Ilyasa Azrurrafi Saiful
- * @version 01 Maret 2021
+ * @version  22 April 2021
  */
+
+import java.util.Calendar;
+import java.util.GregorianCalendar;
+import java.util.ArrayList;
 
 public abstract class Invoice
 {
     private int id;                 //variable id
-    private Job job;
+    private ArrayList<Job> jobs;
     private Calendar date;            //variable date
     protected int totalFee;           //variable totalFee
     private Jobseeker jobseeker;    //variable jobseeker
@@ -20,19 +21,16 @@ public abstract class Invoice
     /**
      * Untuk membuat objek baru
      * @param id id tagihan
-     * @param idJob id pekerjaan dari tagihan 
+     * @param jobs id pekerjaan dari tagihan
      * @param date tanggal tagihan
      * @param totalFee total biaya tagihan
      * @param jobseeker data dari class Jobseeker
      */
-    public Invoice(int id, Job job, Jobseeker jobseeker, InvoiceStatus invoiceStatus)
+    public Invoice(int id, ArrayList<Job> jobs, Jobseeker jobseeker)
     {
         this.id = id;
-        this.job = job;
-        this.totalFee = totalFee;
+        this.jobs = jobs;
         this.jobseeker = jobseeker;
-        this.invoiceStatus = invoiceStatus;
-        this.date = Calendar.getInstance();
     }
 
     /**
@@ -45,9 +43,9 @@ public abstract class Invoice
     }
     
 
-    public Job getJob()
+    public ArrayList<Job> getJobs()
     {
-        return job;
+        return jobs;
     }
 
     /**
@@ -93,7 +91,7 @@ public abstract class Invoice
         this.id = id;   
     }
 
-    public void setJob(Job job)
+    public void setJobs(ArrayList<Job> jobs)
     {
         this.id = id;   
     } 

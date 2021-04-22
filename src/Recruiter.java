@@ -123,6 +123,6 @@ public class Recruiter
     @Override
     public String toString() {
         return "Id = " + getId() + "\nNama = " + getName() + "\nEmail = " + getEmail() + "\nPhone Number = "
-                + getPhoneNumber() + "\nLocation = " + getLocation();
+                + getPhoneNumber() + "\nLocation = " + getLocation().getCity();
     }
 }

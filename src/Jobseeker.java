@@ -1,4 +1,3 @@
-
 /**
  * Merupakan class untuk Jobseeker yang dapat menambah informasi pencari kerja.
  *
@@ -45,7 +44,7 @@ public class Jobseeker
         this.name = name;
         setEmail(email);
         setPassword(password);
-        Calendar joinDate = new GregorianCalendar(year, month, dayOfMonth);
+        this.joinDate = new GregorianCalendar(year, month, dayOfMonth);
     }
 
     public Jobseeker(int id, String name, String email, String password)

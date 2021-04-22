@@ -122,7 +122,7 @@ public class Job
     
     @Override
     public String toString() {
-        return "Id = " + getId() + "\nName = " + getName() + "\nRecruiter = " + getRecruiter() + "\nCity= "
+        return "Id = " + getId() + "\nName = " + getName() + "\nRecruiter = " + getRecruiter().getName() + "\nCity= "
                 + getRecruiter().getLocation().getCity() + "\nFee = " + getFee() + "\nCategory = " + getCategory();
 
     }

@@ -1,23 +1,25 @@
-import java.text.SimpleDateFormat;
-
 /**
  * Merupakan class untuk Bank Payment
  * @author Diaz Ilyasa Azrurrafi Saiful
- * @version 01 Maret 2021
+ * @version  22 April 2021
  */
+
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+
 public class BankPayment extends Invoice
 {
     private static final PaymentType PAYMENT_TYPE = PaymentType.BankPayment;
     private int adminFee;
 
-    public BankPayment(int id, Job job, Jobseeker jobseeker, InvoiceStatus invoiceStatus)
+    public BankPayment(int id, ArrayList<Job> jobs,  Jobseeker jobseeker)
     {
-        super(id, job, jobseeker, invoiceStatus);
+        super(id, jobs, jobseeker);
     }
-    
-    public BankPayment(int id, Job job, Jobseeker jobseeker ,InvoiceStatus invoiceStatus, int adminFee)
+
+    public BankPayment(int id, ArrayList<Job> jobs,Jobseeker jobseeker, int adminFee)
     {
-        super(id, job, jobseeker, invoiceStatus);
+        super(id, jobs,  jobseeker);
         this.adminFee = adminFee;
     }
 
@@ -36,33 +38,36 @@ public class BankPayment extends Invoice
     {
         this.adminFee = adminFee;
     }
-    
-    @Override
-    public void setTotalFee(){
-        if (adminFee > 0) {
-            super.totalFee = getJob().getFee() - adminFee;
-        } else {
-            super.totalFee = getJob().getFee();
 
+    @Override
+    public void setTotalFee()
+    {
+        for(Job job : getJobs()) {
+            if(adminFee != 0) {
+                totalFee = job.getFee() - getAdminFee();
+            }
+            else {
+                totalFee = job.getFee();
+            }
         }
     }
-    
+
     @Override
-    public String toString() {
+    public String toString()
+    {
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MMMM-yyyy");
         String date = dateFormat.format(getDate().getTime());
-        System.out.println("===================== BANK PAYMENT =====================");
-        System.out.println("ID: " + getId());
-        System.out.println("Job: " + getJob().getName());
-        System.out.println("Date: " + date);
-        System.out.println("Job Seeker: " + getJobseeker().getName());
-        
-        setTotalFee();
-        System.out.println("Admin Fee: " + adminFee);
-        System.out.println("Total Fee: " + getTotalFee());
-        System.out.println("Status: " + getInvoiceStatus());
-        System.out.println("Payment Type: " + PAYMENT_TYPE);
-        return "";
+        String res = "";
+        for (Job job : getJobs()) {
+            if (adminFee != 0) {
+                res.concat("\nId = " + getId() + "\nJob = " + job.getName() + "\nDate = " + date + "\nJob Seeker = "
+                        + getJobseeker().getName() + "\nAdmin Fee = " + adminFee + "\nTotal Fee = " + getTotalFee() + "\nStatus = " + getInvoiceStatus() + "\nPayment = " + PAYMENT_TYPE);
+            } else {
+                res.concat("\nId = " + getId() + "\nJob = " + job.getName() + "\nDate = " + date + "\nJob Seeker = "
+                        + getJobseeker().getName() + "\nTotal Fee = " + getTotalFee() + "\nStatus = " + getInvoiceStatus() + "\nPayment = " + PAYMENT_TYPE);
+            }
+        }
+        return res;
     }
 }
 

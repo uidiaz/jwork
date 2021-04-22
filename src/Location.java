@@ -7,7 +7,6 @@
 
 public class Location
 {
-    
     private String province;    //variable province
     private String city;        //variable city
     private String description; //variable description
