@@ -9,8 +9,6 @@ import java.util.ArrayList;
 
 public class DatabaseJob {
 
-    // listjob variable
-
     private static ArrayList<Job> JOB_DATABASE = new ArrayList<Job>();
     private static int lastId = 0;
 
@@ -82,6 +80,4 @@ public class DatabaseJob {
         }
         return false;
     }
-
-    // Access method to fetch a specific existing Job
 }
