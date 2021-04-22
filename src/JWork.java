@@ -11,15 +11,20 @@ public class JWork
     public static void main(String [] args) 
     {
 
-        Location location1 = new Location("DKI Jakarta", "Jakarta Pusat", "Tanah Abang");
-        DatabaseRecruiter.addRecruiter(new Recruiter(DatabaseRecruiter.getLastId() + 1, "Diaz", "diaz@ui.ac.id", "081169696969", location1));
-        DatabaseJobseeker.addJobseeker(new Jobseeker(DatabaseJobseeker.getLastId() + 1, "Ilyasa", "ilyasa@ui.ac.id", "Passw00rd", 2021, 04, 20));
-        DatabaseJobseeker.addJobseeker(new Jobseeker(DatabaseJobseeker.getLastId() + 1, "Azrurrafi", "azrurrafi@ui.ac.id", "p4SSw0rd", 2021, 04 ,22));
-        DatabaseJobseeker.addJobseeker(new Jobseeker(DatabaseJobseeker.getLastId() + 1 , "Saiful", "saiful@ui.ac.id", "pA55w0rd", 2021, 04, 20));
-        System.out.println(DatabaseJob.getJobDatabase());
-        DatabaseJob.addJob(new Job(1, "Backend Engineer Solusimas", DatabaseRecruiter.getRecruiterById(1), 10000, JobCategory.BackEnd));
-        DatabaseJob.addJob(new Job(1, "Engineer Backend masSoulsi", DatabaseRecruiter.getRecruiterById(1), 20000, JobCategory.BackEnd));
-        DatabaseJob.addJob(new Job(1, "Frontend Engineer Solusimas", DatabaseRecruiter.getRecruiterById(1), 10000, JobCategory.FrontEnd));
+        Location location1 = new Location("DKI Jakarta", "Jakarta Pusat", "Apartment");
+        DatabaseRecruiter.addRecruiter(new Recruiter(DatabaseRecruiter.getLastId() + 1, "Diaz", "diaz@ui.ac.id", "08116969696", location1));
+        DatabaseJobseeker.addJobseeker(new Jobseeker(DatabaseJobseeker.getLastId() + 1, "Ilyasa", "saiful@ui.ac.id", "Passw0rd", 2021, 04, 21));
+        DatabaseJobseeker.addJobseeker(new Jobseeker(DatabaseJobseeker.getLastId() + 1, "Azrurrafi", "azrurrafi@ui.ac.id", "p4SSw0rd", 2021, 04, 22));
+        DatabaseJobseeker.addJobseeker(new Jobseeker(DatabaseJobseeker.getLastId() + 1, "Saiful", "saiful@ui.ac.id", "pa55W0rD", 2021, 03, 1));
+
+        System.out.println("\n=====================Jobseeker Database====================\n");
+        System.out.println(DatabaseJobseeker.getDatabaseJobseeker());
+        DatabaseJob.addJob(new Job(1, "Backend Engineer", DatabaseRecruiter.getRecruiterById(1), 10000, JobCategory.BackEnd));
+        DatabaseJob.addJob(new Job(1, "Data Analyst", DatabaseRecruiter.getRecruiterById(1), 20000, JobCategory.DataAnalyst));
+        DatabaseJob.addJob(new Job(1, "Data Scientist", DatabaseRecruiter.getRecruiterById(1), 10000, JobCategory.DataScientist));
+
+        System.out.println("\n=====================Job Database By Category====================\n");
+        System.out.println(DatabaseJob.getJobByCategory(JobCategory.DataAnalyst));
 
 
 

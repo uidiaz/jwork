@@ -7,6 +7,7 @@
 
 public class Job
 {
+
     private int id;                 //variable id
     private String name;            //variable name
     private Recruiter recruiter;    //variable recruiter

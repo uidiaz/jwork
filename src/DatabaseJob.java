@@ -7,29 +7,75 @@
 
 import java.util.ArrayList;
 
-public class DatabaseJob
-{
-    private static ArrayList<Job> JOB_DATABASE;
+public class DatabaseJob {
+
+    // listjob variable
+
+    private static ArrayList<Job> JOB_DATABASE = new ArrayList<Job>();
     private static int lastId = 0;
 
+    public static ArrayList<Job> getJobDatabase() {
+        return JOB_DATABASE;
+    }
+
+    public static int getLastId() {
+        return lastId;
+    }
+
+    public static Job getJobById(int id) {
+        Job temp = null;
+        for (int i = 0; i < JOB_DATABASE.size(); i++) {
+            if (id == JOB_DATABASE.get(i).getId()) {
+                temp = JOB_DATABASE.get(i);
+            }
+        }
+        return temp;
+    }
+
+    public static ArrayList<Job> getJobByRecruiter(int recruiterId) {
+        ArrayList<Job> temp = new ArrayList<Job>();
+        for (int i = 0; i < JOB_DATABASE.size(); i++) {
+            if (recruiterId == JOB_DATABASE.get(i).getRecruiter().getId()) {
+                temp.add(JOB_DATABASE.get(i));
+            } else {
+                return null;
+            }
+        }
+        return temp;
+
+    }
+
+    public static ArrayList<Job> getJobByCategory(JobCategory category) {
+        ArrayList<Job> temp = new ArrayList<Job>();
+        for (int i = 0; i < JOB_DATABASE.size(); i++) {
+            if (category == JOB_DATABASE.get(i).getCategory()) {
+                temp.add(JOB_DATABASE.get(i));
+            }
+        }
+        return temp;
+    }
 
     /**
-     * boolean untuk menambah pekerjaan
-     * @return nilai yang berbeda
+     * Method to add a new Job
+     *
+     * @param job
+     * @return boolean value whether the Job addition is successful or not
      */
-    public static boolean addJob(Job job){
+    public static boolean addJob(Job job) {
         JOB_DATABASE.add(job);
         lastId = job.getId();
         return true;
     }
 
     /**
-     * boolean untuk menghapus pekerjaan
-     * @return nilai yang berbeda
+     * Method to remove an existing Job
+     *
+     * @param job
+     * @return boolean value whether the Job removal is successful or not
      */
-    public static boolean remove(Job job){
-        for (Job jobb : JOB_DATABASE) {
-            if (job.getId() == jobb.getId()) {
+    public static boolean removeJob(int id) {
+        for (Job job : JOB_DATABASE) {
+            if (job.getId() == job.getId()) {
                 JOB_DATABASE.remove(job);
                 return true;
             }
@@ -37,51 +83,5 @@ public class DatabaseJob
         return false;
     }
 
-    /**
-     * Sebuah getter untuk mendapatkan data Job
-     * @return nilai kosong
-     */
-    public static ArrayList<Job> getJobDatabase()
-    {
-        return JOB_DATABASE;
-    }
-
-    public static int getLastId()
-    {
-        return lastId;
-    }
-
-    public static Job getJobById(int id){
-        Job x = null;
-        for (Job job : JOB_DATABASE) {
-            if (id == job.getId()) {
-                x = job;
-            }
-        }
-        return x;
-    }
-
-    public static ArrayList<Job> getJobByRecruiter(int recruiterId){
-        ArrayList<Job> temp = new ArrayList<Job>();
-        for (Job job : JOB_DATABASE) {
-            if (recruiterId == job.getRecruiter().getId()) {
-                temp.add(job);
-            } else {
-                return null;
-            }
-        }
-        return temp;
-    }
-
-    public static ArrayList<Job> getJobByCategory(JobCategory category){
-        ArrayList<Job> x = new ArrayList<Job>();
-        for (Job job : JOB_DATABASE) {
-            if (category == job.getCategory()) {
-                x.add(job);
-            } else {
-                return null;
-            }
-        }
-        return x;
-    }
+    // Access method to fetch a specific existing Job
 }
