@@ -11,28 +11,60 @@ public class JWork
     public static void main(String [] args) 
     {
 
-        Location location1 = new Location("DKI Jakarta", "Jakarta Pusat", "Apartment");
-        DatabaseRecruiter.addRecruiter(new Recruiter(DatabaseRecruiter.getLastId() + 1, "Diaz", "diaz@ui.ac.id", "08116969696", location1));
-        DatabaseJobseeker.addJobseeker(new Jobseeker(DatabaseJobseeker.getLastId() + 1, "Ilyasa", "saiful@ui.ac.id", "Passw0rd", 2021, 04, 21));
-        DatabaseJobseeker.addJobseeker(new Jobseeker(DatabaseJobseeker.getLastId() + 1, "Azrurrafi", "azrurrafi@ui.ac.id", "p4SSw0rd", 2021, 04, 22));
-        DatabaseJobseeker.addJobseeker(new Jobseeker(DatabaseJobseeker.getLastId() + 1, "Saiful", "saiful@ui.ac.id", "pa55W0rD", 2021, 03, 1));
+        System.out.println("=========Error===============");
+        try {
+            DatabaseJobseeker.addJobseeker(new Jobseeker(DatabaseJobseeker.getLastId() + 1, "Diaz",
+                    "diaz@ui.ac.id", "passW0rd123", 2021, 04, 22));
+        } catch (EmailAlreadyExistsException e) {
+            System.out.println(e.getMessage());
+        }
+        try {
+            DatabaseJobseeker.addJobseeker(new Jobseeker(DatabaseJobseeker.getLastId() + 1, "Ilyasa",
+                    "diaz@ui.ac.id", "P4ssw0rd123", 2021, 04, 23));
+        } catch (EmailAlreadyExistsException e) {
+            System.out.println(e.getMessage());
+        }
+        try {
+            DatabaseJobseeker.addJobseeker(new Jobseeker(DatabaseJobseeker.getLastId() + 1, "Azrurrafi",
+                    "azrurrafi@ui.ac.id", "Pa55w0rd123", 2021, 03, 6));
+        } catch (EmailAlreadyExistsException e) {
+            System.out.println(e.getMessage());
+        }
+        try {
+            DatabaseJobseeker.addJobseeker(new Jobseeker(DatabaseJobseeker.getLastId() + 1, "Saiful",
+                    "saiful@ui.ac.id", "p4sworD123", 2021, 03, 6));
+        } catch (EmailAlreadyExistsException e) {
+            System.out.println(e.getMessage());
+        }
 
-        DatabaseBonus.addBonus(new Bonus(1, "KAIA50", 1000, 500, false));
-        DatabaseBonus.addBonus(new Bonus(2, "KAIA50", 1000, 500, true));
+        try {
+            DatabaseBonus.addBonus(new Bonus(101, "BreathItIn", 200000, 500000, false));
+        } catch (ReferralCodeAlreadyExistsException e) {
+            System.out.println(e.getMessage());
+        }
+        try {
+            DatabaseBonus.addBonus(new Bonus(101, "BreathItIn", 200000, 500000, true));
+        } catch (ReferralCodeAlreadyExistsException e) {
+            System.out.println(e.getMessage());
+        }
+        System.out.println("=========Database JobSeeker============");
+        System.out.println(DatabaseJobseeker.getDatabaseJobseeker());
 
-        System.out.println("\n=====================Invoice Database====================\n");
-        System.out.println(DatabaseBonus.getBonusById(1));
-        System.out.println(DatabaseBonus.getBonusById(2));
+        System.out.println("=========Database Bonus===============");
+        System.out.println(DatabaseBonus.getBonusDatabase());
+
+
+    }
+}
+
 
         /**
             Location location1 = new Location("DKI Jakarta", "Jakarta Pusat", "Apart");
             Recruiter recruiter1 = new Recruiter(1, "Diaz", "diaz.ilyasa@ui.ac.id", "08117776666", location1);
             Job job1 = new Job(2, "Senior Designer", recruiter1, 22000, JobCategory.WebDeveloper);
-            // Jobseeker jobseeker1 = new Jobseeker(3, "Adam", "Adam.Adam@ui.ac.id", "passworddddd", "18 Maret 2021");
+            Jobseeker jobseeker1 = new Jobseeker(3, "Adam", "Adam.Adam@ui.ac.id", "passworddddd", "18 Maret 2021");
             Bonus bonus1 = new Bonus(11, "BonusPay", 20000, 10000, true);
             Bonus bonus2 = new Bonus(12, "BonusPay", 20000, 30000, true);
-
-
 
             Jobseeker jobseeker2 = new Jobseeker(1, "Name one", "diaz@ui.ac.id", "Passw0rd1", new GregorianCalendar(2000, 8, 15));
             Jobseeker jobseeker3 = new Jobseeker(2, "Name two", "diaz.ilyasa@ui.ac.id", "Passw0rd2", 2000, 4, 8);
@@ -45,26 +77,15 @@ public class JWork
             BankPayment bp1 = new BankPayment(8, job1, jobseeker2, InvoiceStatus.Finished);
             BankPayment bp2 = new BankPayment(9, job1, jobseeker3, InvoiceStatus.Finished, 9000);
 
-            e1.setTotalFee();
-            e2.setTotalFee();
-            e3.setTotalFee();
-            bp1.setTotalFee();
-            bp2.setTotalFee();
+             Location location1 = new Location("DKI Jakarta", "Jakarta Pusat", "Apartment");
+             DatabaseRecruiter.addRecruiter(new Recruiter(DatabaseRecruiter.getLastId() + 1, "Diaz", "diaz@ui.ac.id", "08116969696", location1));
+             DatabaseJobseeker.addJobseeker(new Jobseeker(DatabaseJobseeker.getLastId() + 1, "Ilyasa", "saiful@ui.ac.id", "Passw0rd", 2021, 04, 21));
+             DatabaseJobseeker.addJobseeker(new Jobseeker(DatabaseJobseeker.getLastId() + 1, "Azrurrafi", "azrurrafi@ui.ac.id", "p4SSw0rd", 2021, 04, 22));
+             DatabaseJobseeker.addJobseeker(new Jobseeker(DatabaseJobseeker.getLastId() + 1, "Saiful", "saiful@ui.ac.id", "pa55W0rD", 2021, 03, 1));
 
-            e1.toString();
-            bp2.toString();
+             DatabaseBonus.addBonus(new Bonus(1, "KAIA50", 1000, 500, false));
+             DatabaseBonus.addBonus(new Bonus(2, "KAIA50", 1000, 500, true));
 
-             System.out.println("\n=====================Jobseeker Database====================\n");
-             System.out.println(DatabaseJobseeker.getDatabaseJobseeker());
-             DatabaseJob.addJob(new Job(1, "Backend Engineer", DatabaseRecruiter.getRecruiterById(1), 10000, JobCategory.BackEnd));
-             DatabaseJob.addJob(new Job(1, "Data Analyst", DatabaseRecruiter.getRecruiterById(1), 20000, JobCategory.DataAnalyst));
-             DatabaseJob.addJob(new Job(1, "Data Scientist", DatabaseRecruiter.getRecruiterById(1), 10000, JobCategory.DataScientist));
-
-             System.out.println("\n=====================Job Database====================\n");
-             System.out.println(DatabaseJob.getJobByCategory(JobCategory.DataAnalyst));
 
 
          */
-    }
-
-}

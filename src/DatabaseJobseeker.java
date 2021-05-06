@@ -20,50 +20,45 @@ public class DatabaseJobseeker
           return lastId;
      }
 
-     public static Jobseeker getJobseekerById(int id)
-     {
+     public static Jobseeker getJobseekerById(int id) throws JobSeekerNotFoundException{
           Jobseeker temp = null;
-          for (int i = 0; i < JOBSEEKER_DATABASE.size(); i++) {
-               if (id == JOBSEEKER_DATABASE.get(i).getId()) {
-                    temp = JOBSEEKER_DATABASE.get(i);
+          try{
+               for (Jobseeker jobseeker : JOBSEEKER_DATABASE) {
+                    if (id == jobseeker.getId()) {
+                         temp = jobseeker;
+                    }
                }
+          }
+          catch (Exception e){
+               throw new JobSeekerNotFoundException(id);
           }
           return temp;
      }
 
-     public static boolean addJobseeker(Jobseeker jobseeker) {
+     public static boolean addJobseeker(Jobseeker jobseeker) throws EmailAlreadyExistsException {
           boolean result = false;
-          if (JOBSEEKER_DATABASE.size() == 0){
-               JOBSEEKER_DATABASE.add(jobseeker);
-               lastId = jobseeker.getId();
-               result = true;
-               return result;
-          }
-          for (int i = 0; i < JOBSEEKER_DATABASE.size(); i++) {
-               if (jobseeker.getEmail().equals(JOBSEEKER_DATABASE.get(i).getEmail())) {
-                    System.out.println("Email has been registered");
-                    result = false;
-                    return result;
-               } else {
-                    JOBSEEKER_DATABASE.add(jobseeker);
-                    lastId = jobseeker.getId();
-                    result = true;
-                    return result;
+          for (Jobseeker js : JOBSEEKER_DATABASE) {
+               if (jobseeker.getEmail() == js.getEmail()) {
+                    throw new EmailAlreadyExistsException(jobseeker);
                }
-
           }
-          return result;
+          JOBSEEKER_DATABASE.add(jobseeker);
+          lastId = jobseeker.getId();
+          return true;
      }
 
-     public static boolean removeJobseeker(int id)
-     {
-          for (Jobseeker jobseeker : JOBSEEKER_DATABASE) {
-               if (jobseeker.getId() == jobseeker.getId()) {
-                    JOBSEEKER_DATABASE.remove(jobseeker);
-                    return true;
+     public static boolean removeJobseeker(int id) throws JobSeekerNotFoundException{
+          try{
+               for (Jobseeker jobseeker : JOBSEEKER_DATABASE) {
+                    if (jobseeker.getId() == jobseeker.getId()) {
+                         JOBSEEKER_DATABASE.remove(jobseeker);
+                         return true;
+                    }
                }
+          }
+          catch (Exception e){
+               throw new JobSeekerNotFoundException(id);
           }
           return false;
      }
-
 }

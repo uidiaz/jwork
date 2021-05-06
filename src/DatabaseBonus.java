@@ -19,14 +19,19 @@ public class DatabaseBonus
         return lastId;
     }
 
-    public static Bonus getBonusById(int id){
-        Bonus x = null;
-        for (Bonus bonus : BONUS_DATABASE) {
-            if (id == bonus.getId()) {
-                x = bonus;
+    public static Bonus getBonusById(int id) throws BonusNotFoundException {
+        Bonus temp = null;
+        try {
+            for (Bonus bonus : BONUS_DATABASE) {
+                if (id == bonus.getId()) {
+                    temp = bonus;
+                }
             }
         }
-        return x;
+        catch (Exception e){
+            throw new BonusNotFoundException(id);
+        }
+        return temp;
     }
 
     public static Bonus getBonusByRefferalCode(String refferalCode){
@@ -39,7 +44,13 @@ public class DatabaseBonus
         return x;
     }
 
-    public static boolean addBonus(Bonus bonus){
+    public static boolean addBonus(Bonus bonus) throws ReferralCodeAlreadyExistsException {
+        for(Bonus bonuses : BONUS_DATABASE) {
+            if(bonuses.getReferralCode() == bonus.getReferralCode()) {
+                throw new ReferralCodeAlreadyExistsException(bonus);
+            }
+        }
+
         BONUS_DATABASE.add(bonus);
         lastId = bonus.getId();
         return true;
@@ -67,12 +78,17 @@ public class DatabaseBonus
         return x;
     }
 
-    public static boolean removeBonus(int id){
-        for (Bonus bonus : BONUS_DATABASE) {
-            if (bonus.getId() == id) {
-                BONUS_DATABASE.remove(bonus);
-                return true;
+    public static boolean removeBonus(int id) throws RecruiterNotFoundException{
+        try{
+            for (Bonus bonus : BONUS_DATABASE) {
+                if (bonus.getId() == id) {
+                    BONUS_DATABASE.remove(bonus);
+                    return true;
+                }
             }
+        }
+        catch (Exception e){
+            throw new RecruiterNotFoundException(id);
         }
         return false;
     }

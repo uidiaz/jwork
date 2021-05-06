@@ -8,59 +8,74 @@ import java.util.ArrayList;
 
 public class DatabaseInvoice {
     private static ArrayList<Invoice> INVOICE_DATABASE = new ArrayList<Invoice>();
-    private static int lastId;
+    private static int lastId = 0;
 
-    public static ArrayList<Invoice> getInvoiceDatabase(){
+    public static ArrayList<Invoice> getInvoiceDatabase() {
         return INVOICE_DATABASE;
     }
 
-    public static int getLastId(){
+    public static int getLastId() {
         return lastId;
     }
 
-    public static Invoice getInvoiceById(int id){
-        for (int i=0; i < INVOICE_DATABASE.size(); i++) {
-            if(INVOICE_DATABASE.get(i).getId()== id){
-                return INVOICE_DATABASE.get(i);
+    public static Invoice getInvoiceById(int id) {
+        Invoice temp = null;
+        for (Invoice invoice : INVOICE_DATABASE) {
+            if (id == invoice.getId()) {
+                temp = invoice;
+            } else {
+                temp = null;
             }
         }
-        return null;
+        return temp;
     }
 
-    public static ArrayList<Invoice> getInvoiceByJobseeker(int jobseekerId){
-        ArrayList<Invoice> temp = new ArrayList<>();
-        for (int i=0; i < INVOICE_DATABASE.size(); i++) {
-            if(INVOICE_DATABASE.get(i).getJobseeker().getId() == jobseekerId){
-                temp.add(INVOICE_DATABASE.get(i));
-                return temp;
+    public static ArrayList<Invoice> getInvoiceByJobseeker(int jobseekerId) {
+        ArrayList<Invoice> temp = null;
+        for (Invoice invoice : INVOICE_DATABASE) {
+            if (jobseekerId == invoice.getJobseeker().getId()) {
+                if (temp == null) {
+                    temp = new ArrayList<Invoice>();
+                }
+                temp.add(invoice);
             }
         }
-        return null;
+        return temp;
     }
 
-    public static boolean addInvoice(Invoice invoice){
-        //for (Bonus bons : INVOICE_DATABASE)
-        //{
-        //if (bons.getId() == invoice.getId()) return false;
-        //if (bons.getReferralCode() == invoice.getReferralCode()) return false;
-        //}
+    public static boolean addInvoice(Invoice invoice) {
+        if (invoice.getInvoiceStatus() == InvoiceStatus.OnGoing){
+            invoice.setInvoiceStatus(InvoiceStatus.Finished);
+        }
         INVOICE_DATABASE.add(invoice);
         lastId = invoice.getId();
         return true;
     }
 
-    public static boolean changeInvoiceStatus(int id, InvoiceStatus InvoiceStatus){
-        return false;
-    }
-
-    public static boolean removeInvoice(int id){
-        for (int i=0; i < INVOICE_DATABASE.size(); i++) {
-            if(INVOICE_DATABASE.get(i).getId() == id) {
-                INVOICE_DATABASE.remove(i);
-                return true;
+    public static boolean changeInvoiceStatus(int id, InvoiceStatus invoiceStatus) {
+        boolean temp = true;
+        for (Invoice invoice : INVOICE_DATABASE) {
+            if (id == invoice.getId() && invoice.getInvoiceStatus() == InvoiceStatus.OnGoing) {
+                invoice.setInvoiceStatus(invoiceStatus);
+                temp = true;
+            } else {
+                temp = false;
             }
         }
-        return false;
+        return temp;
+    }
+
+    public static boolean removeInvoice(int id) {
+        boolean temp = true;
+        for (Invoice invoice : INVOICE_DATABASE) {
+            if (id == invoice.getId()) {
+                INVOICE_DATABASE.remove(invoice);
+                temp = true;
+            } else {
+                temp = false;
+            }
+        }
+        return temp;
     }
 
 }
