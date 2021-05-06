@@ -53,7 +53,9 @@ public class JWork
         System.out.println("=========Database Bonus===============");
         System.out.println(DatabaseBonus.getBonusDatabase());
 
-
+        for (Invoice invoice : DatabaseInvoice.getInvoiceDatabase()){
+            new Thread(new FeeCalculator(invoice)).start();
+        }
     }
 }
 
