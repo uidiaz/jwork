@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 public class DatabaseJobseeker
 {
-     private static ArrayList<Jobseeker> JOBSEEKER_DATABASE = new ArrayList<Jobseeker>();
+     private static final ArrayList<Jobseeker> JOBSEEKER_DATABASE = new ArrayList<Jobseeker>();
      private static int lastId = 0;
 
      public static ArrayList<Jobseeker> getDatabaseJobseeker()
@@ -22,14 +22,13 @@ public class DatabaseJobseeker
 
      public static Jobseeker getJobseekerById(int id) throws JobSeekerNotFoundException{
           Jobseeker temp = null;
-          try{
-               for (Jobseeker jobseeker : JOBSEEKER_DATABASE) {
-                    if (id == jobseeker.getId()) {
-                         temp = jobseeker;
-                    }
+          for (Jobseeker jobseeker : JOBSEEKER_DATABASE) {
+               if (id == jobseeker.getId()) {
+                    temp = jobseeker;
+                    return temp;
                }
           }
-          catch (Exception e){
+          if (temp == null){
                throw new JobSeekerNotFoundException(id);
           }
           return temp;
@@ -48,15 +47,16 @@ public class DatabaseJobseeker
      }
 
      public static boolean removeJobseeker(int id) throws JobSeekerNotFoundException{
-          try{
-               for (Jobseeker jobseeker : JOBSEEKER_DATABASE) {
-                    if (jobseeker.getId() == jobseeker.getId()) {
-                         JOBSEEKER_DATABASE.remove(jobseeker);
-                         return true;
-                    }
+          boolean status = false;
+          for (Jobseeker jobseeker : JOBSEEKER_DATABASE) {
+               if (jobseeker.getId() == id) {
+                    JOBSEEKER_DATABASE.remove(jobseeker);
+                    status = true;
+                    break;
                }
           }
-          catch (Exception e){
+
+          if (!status){
                throw new JobSeekerNotFoundException(id);
           }
           return false;

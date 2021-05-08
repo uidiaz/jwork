@@ -19,16 +19,15 @@ public class DatabaseRecruiter
 
     public static Recruiter getRecruiterById(int id) throws RecruiterNotFoundException {
         Recruiter temp = null;
-        try{
-            for (Recruiter recruiter: RECRUITER_DATABASE) {
-                if (id == recruiter.getId()){
-                    temp = recruiter;
-                }
+        for (Recruiter recruiter: RECRUITER_DATABASE) {
+            if (id == recruiter.getId()) {
+                temp = recruiter;
+                return temp;
             }
-        } catch (Exception e){
+        }
+        if (temp == null) {
             throw new RecruiterNotFoundException(id);
         }
-
         return temp;
     }
 
@@ -38,15 +37,16 @@ public class DatabaseRecruiter
     }
 
     public static boolean removeRecruiter(int id) throws RecruiterNotFoundException {
-        try{
-            for (Recruiter element : RECRUITER_DATABASE) {
-                if (element.getId() == id) {
-                    RECRUITER_DATABASE.remove(element);
-                    return true;
-                }
+        boolean status = false;
+        for (Recruiter element : RECRUITER_DATABASE) {
+            if (element.getId() == id) {
+                RECRUITER_DATABASE.remove(element);
+                status = true;
+                break;
             }
         }
-        catch (Exception e){
+
+        if (!status){
             throw new RecruiterNotFoundException(id);
         }
         return false;

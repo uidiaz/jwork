@@ -21,14 +21,14 @@ public class DatabaseBonus
 
     public static Bonus getBonusById(int id) throws BonusNotFoundException {
         Bonus temp = null;
-        try {
-            for (Bonus bonus : BONUS_DATABASE) {
-                if (id == bonus.getId()) {
-                    temp = bonus;
-                }
+        for (Bonus bonus : BONUS_DATABASE) {
+            if (id == bonus.getId()) {
+                temp = bonus;
+                return temp;
             }
         }
-        catch (Exception e){
+
+        if (temp == null){
             throw new BonusNotFoundException(id);
         }
         return temp;
@@ -79,15 +79,16 @@ public class DatabaseBonus
     }
 
     public static boolean removeBonus(int id) throws RecruiterNotFoundException{
-        try{
-            for (Bonus bonus : BONUS_DATABASE) {
-                if (bonus.getId() == id) {
-                    BONUS_DATABASE.remove(bonus);
-                    return true;
-                }
+        boolean status = false;
+        for (Bonus bonus : BONUS_DATABASE) {
+            if (bonus.getId() == id) {
+                BONUS_DATABASE.remove(bonus);
+                status = true;
+                break;
             }
         }
-        catch (Exception e){
+
+        if (!status){
             throw new RecruiterNotFoundException(id);
         }
         return false;

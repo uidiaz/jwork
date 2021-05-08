@@ -56,6 +56,17 @@ public class JWork
         for (Invoice invoice : DatabaseInvoice.getInvoiceDatabase()){
             new Thread(new FeeCalculator(invoice)).start();
         }
+
+        System.out.println("\n ========== Invoice ==========");
+        System.out.println(DatabaseInvoice.getInvoiceDatabase());
+
+        try {
+            DatabaseInvoice.getInvoiceById(1);
+        } catch (InvoiceNotFoundException e) {
+            System.out.println(e.getMessage());
+        }
+
+
     }
 }
 
