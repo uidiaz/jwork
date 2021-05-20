@@ -12,7 +12,9 @@ public class DatabaseRecruiter
     private static ArrayList<Recruiter> RECRUITER_DATABASE = new ArrayList<Recruiter>();
     private static int lastId = 0;
 
-    private static ArrayList<Recruiter> getRecruiterDatabase;
+    public static ArrayList<Recruiter> getRecruiterDatabase() {
+        return RECRUITER_DATABASE;
+    }
 
     public static int getLastId()
     {
@@ -33,8 +35,9 @@ public class DatabaseRecruiter
         return temp;
     }
 
-    public static boolean addRecruiter(Recruiter recruiter)
-    {
+    public static boolean addRecruiter(Recruiter recruiter) {
+        RECRUITER_DATABASE.add(recruiter);
+        lastId = recruiter.getId();
         return true;
     }
 
