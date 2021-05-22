@@ -57,19 +57,35 @@ public class InvoiceController {
     }
 
     @RequestMapping(value = "/createBankPayment", method = RequestMethod.POST)
-    public Invoice addBankPayment(@RequestParam(value="jobs") ArrayList<Job> jobs,
-                                  @RequestParam(value="jobseeker") Jobseeker jobseeker,
-                                  @RequestParam(value="adminFee") int adminFee
-    ) throws OnGoingInvoiceAlreadyExistException {
-        Invoice invoice = new BankPayment(DatabaseInvoice.getLastId() + 1, jobs, jobseeker, adminFee);
-        try{
-            DatabaseInvoice.addInvoice(invoice);
+    public Invoice addBankPayment(@RequestParam(value="jobIdList") ArrayList<Integer> jobIdList,
+                                  @RequestParam(value = "jobseekerId") int jobseekerId,
+                                  @RequestParam(value = "adminFee") int adminFee){
+        Invoice invoice = null;
+        ArrayList<Job> jobs = null;
+        for(var i = 0; i < jobIdList.size(); i++) {
+            try {
+                jobs.add(DatabaseJob.getJobById(jobIdList.get(i)));
+            } catch (JobNotFoundException e) {
+                e.getMessage();
+            }
         }
-        catch(OnGoingInvoiceAlreadyExistException e){
+        try {
+            invoice = new BankPayment(DatabaseInvoice.getLastId()+1, jobs, DatabaseJobseeker.getJobseekerById(jobseekerId));
+            invoice.setTotalFee();
+        } catch (JobSeekerNotFoundException e) {
             e.getMessage();
+        }
+        boolean status = false;
+        try {
+            status = DatabaseInvoice.addInvoice(invoice);
+        } catch (OnGoingInvoiceAlreadyExistException e) {
+            e.getMessage();
+        }
+        if (status) {
+            return invoice;
+        } else {
             return null;
         }
-        return invoice;
     }
 
 
