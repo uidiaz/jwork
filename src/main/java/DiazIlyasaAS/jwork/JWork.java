@@ -33,5 +33,4 @@ public class JWork {
         SpringApplication.run(JWork.class, args);
 
     }
-
 }
