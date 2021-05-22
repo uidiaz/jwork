@@ -56,22 +56,52 @@ public class InvoiceController {
         return false;
     }
 
-    @RequestMapping(value = "", method = RequestMethod.POST)
-    public Job addBankPayment(@RequestParam(value="name") String name,
-                              @RequestParam(value="fee") int fee,
-                              @RequestParam(value="category") String category,
-                              @RequestParam(value="recruiterId") int recruiterId)
-    {
-        
+    @RequestMapping(value = "/createBankPayment", method = RequestMethod.POST)
+    public Invoice addBankPayment(@RequestParam(value="jobs") ArrayList<Job> jobs,
+                                  @RequestParam(value="jobseeker") Jobseeker jobseeker,
+                                  @RequestParam(value="adminFee") int adminFee
+    ) throws OnGoingInvoiceAlreadyExistException {
+        Invoice invoice = new BankPayment(DatabaseInvoice.getLastId() + 1, jobs, jobseeker, adminFee);
+        try{
+            DatabaseInvoice.addInvoice(invoice);
+        }
+        catch(OnGoingInvoiceAlreadyExistException e){
+            e.getMessage();
+            return null;
+        }
+        return invoice;
     }
 
 
-    @RequestMapping(value = "/createCashlessInvoice", method = RequestMethod.POST)
-    public Invoice addEwalletPayment(@RequestParam(value="name") String name,
-                                     @RequestParam(value="fee") int fee,
-                                     @RequestParam(value="category") String category,
-                                     @RequestParam(value="recruiterId") int recruiterId)
-    {
-
+    @RequestMapping(value = "createEWalletPayment", method = RequestMethod.POST)
+    public Invoice addEWalletPayment(@RequestParam(value = "jobIdList") ArrayList<Integer> jobIdList,
+                                     @RequestParam(value = "jobseekerId") int jobseekerId,
+                                     @RequestParam(value = "referralCode") String referralCode) {
+        Invoice invoice = null;
+        ArrayList<Job> jobs = null;
+        for(var i = 0; i < jobIdList.size(); i++) {
+            try {
+                jobs.add(DatabaseJob.getJobById(jobIdList.get(i)));
+            } catch (JobNotFoundException e) {
+                e.getMessage();
+            }
+        }
+        try {
+            invoice = new EwalletPayment(DatabaseInvoice.getLastId() + 1, jobs, DatabaseJobseeker.getJobseekerById(jobseekerId), DatabaseBonus.getBonusByRefferalCode(referralCode));
+            invoice.setTotalFee();
+        } catch (JobSeekerNotFoundException e) {
+            e.printStackTrace();
+        }
+        boolean status = false;
+        try {
+            status = DatabaseInvoice.addInvoice(invoice);
+        } catch (OnGoingInvoiceAlreadyExistException e) {
+            e.printStackTrace();
+        }
+        if (status) {
+            return invoice;
+        } else {
+            return null;
+        }
     }
 }
