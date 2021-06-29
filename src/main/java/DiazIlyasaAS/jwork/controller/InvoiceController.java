@@ -48,7 +48,7 @@ public class InvoiceController {
      * @param jobseekerId yaitu menggunakan inputan id jobseeker untuk menampilkan Invoice yang sesuai
      * @return data invoice yang sesuai dengan id jobseeker yang telah diinputkan
      */
-    @RequestMapping("/Jobseeker/{JobseekerId}")
+    @RequestMapping("/Jobseeker/{jobseekerId}")
     public ArrayList<Invoice> getInvoiceByJobseeker(@PathVariable int jobseekerId) {
         ArrayList<Invoice> invoice = null;
         invoice = DatabaseInvoice.getInvoiceByJobseeker(jobseekerId);

@@ -19,14 +19,14 @@ public class JWork {
         Location location3 = new Location("Jawa Barat", "Banda", "Vacation");
 
         DatabaseRecruiter.addRecruiter(new Recruiter(DatabaseRecruiter.getLastId() + 1, "Diaz Ilyasa", "diaz.ilyasa@ui.ac.id", "08218705312", location1));
-        DatabaseRecruiter.addRecruiter(new Recruiter(DatabaseRecruiter.getLastId() + 1, "Az Saiful", "az.saiful@ui.ac.id", "082129816423", location2));
-        DatabaseRecruiter.addRecruiter(new Recruiter(DatabaseRecruiter.getLastId() + 1, "Mil Fitus", "mil.fitus@ui.ac.id", "082138927534", location3));
+        DatabaseRecruiter.addRecruiter(new Recruiter(DatabaseRecruiter.getLastId() + 1, "Bill Gates", "bill.gates@ui.ac.id", "082129816423", location2));
+        DatabaseRecruiter.addRecruiter(new Recruiter(DatabaseRecruiter.getLastId() + 1, "Mustofa Kamal", "mustofa.kamal@ui.ac.id", "082138927534", location3));
         try {
-            DatabaseJob.addJob(new Job(1, "Backend Engineer 1", DatabaseRecruiter.getRecruiterById(1), 10000, JobCategory.BackEnd));
-            DatabaseJob.addJob(new Job(2, "Backend Engineer 2", DatabaseRecruiter.getRecruiterById(2), 30000, JobCategory.BackEnd));
-            DatabaseJob.addJob(new Job(3, "Frontend Engineer 1", DatabaseRecruiter.getRecruiterById(3), 20000, JobCategory.FrontEnd));
-            DatabaseJob.addJob(new Job(4, "Data Analyst 1", DatabaseRecruiter.getRecruiterById(3), 40000, JobCategory.DataAnalyst));
-            DatabaseBonus.addBonus(new Bonus(1, "BONUSPAYMENT", 10000, 1000, true));
+            DatabaseJob.addJob(new Job(1, "Front End Developer", DatabaseRecruiter.getRecruiterById(1), 300000, JobCategory.FrontEnd));
+            DatabaseJob.addJob(new Job(2, "UI Designer", DatabaseRecruiter.getRecruiterById(1), 100000, JobCategory.UI));
+            DatabaseJob.addJob(new Job(3, "Back End Engineer", DatabaseRecruiter.getRecruiterById(2), 400000, JobCategory.BackEnd));
+            DatabaseJob.addJob(new Job(4, "Data Analyst", DatabaseRecruiter.getRecruiterById(3), 500000, JobCategory.DataAnalyst));
+            DatabaseBonus.addBonus(new Bonus(1, "MICROSOFT", 100000, 1000, true));
         } catch (RecruiterNotFoundException | ReferralCodeAlreadyExistsException e) {
             e.printStackTrace();
         }
