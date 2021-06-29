@@ -1,85 +1,116 @@
-/**
- * Merupakan class untuk Location yang dapat menambah lokasi.
- *
- * @author Diaz Ilyasa Azrurrafi Saiful
- * @version 01 Maret 2021
- */
-
 package DiazIlyasaAS.jwork;
 
-public class Location
-{
+/**
+ * Kelas Location, dalam kelas ini terdapat beberapa method acessor (get) dan mutator (set).
+ * Serta adanya sebuah method yang bertipe void untuk melakukan printData.
+ * Sesuai dengan nama kelasnya (Location) yang berarti lokasi, sepertinya akan digunakan untuk mengatur segala data yang terkait dengan detail suatu lokasi.
+ * Didalam kelas ini juga ada beberapa access modifier (public dan private) yang digunakan pada variable, method, atau constructor.
+ * Access Modifier bersifat public berarti dapat diakses oleh kelas dari mana saja termasuk subclass.
+ * Access Modifier bersifat private berarti hanya dapat diakses didalam kelas itu sendiri saja.
+ *
+ * @author Diaz Ilyasa Azrurrafi Saiful
+ * @version 01-03-2021
+ */
+public class Location {
+    // Access Modifier variable di set private.
     private String province;    //variable province
     private String city;        //variable city
     private String description; //variable description
 
     /**
-     * Untuk membuat objek baru
-     @param province provisi lokasi
-     @param city kota lokasi
-     @param description deskripsi lokasi
+     * Sebuah Constructor default yang bernama Location.
+     * Access Modifier pada constrcutor ini berjenis public.
+     * Parameter digunakan sebagai nilai inputan suatu fungsi ketika fungsi tersebut didefinisikan.
+     * Ada beberapa parameter yang digunakan untuk konstruktor ini, yang dapat langsung dilihat dibawah.
+     *
+     * @param province merupakan nilai inputan untuk variable province
+     * @param city  merupakan nilai inputan untuk variable city
+     * @param description  merupakan nilai inputan untuk variable description
      */
-    public Location(String province, String city, String description)
-    {
+    public Location(String province, String city, String description) {
         this.province = province;
         this.city = city;
         this.description = description;
     }
 
     /**
-     * Sebuah getter untuk mendapatkan data province
-     * @return objek province
+     * Sebuah method getter (accessor) yang bernama getProvince untuk mendapatkan/mengembalikkan data province.
+     * Return type dari method ini adalah String.
+     * Tidak ada parameter yang digunakan pada method ini.
+     * Access modifier pada method berjenis public.
+     *
+     * @return province jadi mengembalikkan nilai yang ada didalam variable province
      */
-    public String getProvince()
-    {
+    public String getProvince() {
         return province;
     }
 
     /**
-     * Sebuah getter untuk mendapatkan data city
-     * @return objek city
+     * Sebuah method getter (accessor) yang bernama getCity untuk mendapatkan/mengembalikkan data city.
+     * Return type dari method ini adalah String.
+     * Tidak ada parameter yang digunakan pada method ini.
+     * Access modifier pada method berjenis public.
+     *
+     * @return city jadi mengembalikkan nilai yang ada didalam variable city
      */
-    public String getCity()
-    {
+    public String getCity() {
         return city;
     }
 
     /**
-     * Sebuah getter untuk mendapatkan data descriprion
-     * @return objek description
+     * Sebuah method getter (accessor) yang bernama getDescription untuk mendapatkan/mengembalikkan data description.
+     * Return type dari method ini adalah String.
+     * Tidak ada parameter yang digunakan pada method ini.
+     * Access modifier pada method berjenis public.
+     *
+     * @return description jadi mengembalikkan nilai yang ada didalam variable description
      */
-    public String getDescription()
-    {
+    public String getDescription() {
         return description;
     }
 
     /**
-     * Sebuah setter untuk mengisi ulang provinsi dari objek
-     * @param province provinsi dari lokasi
+     * Sebuah method setter (mutator) yang bernama setProvince untuk menetapkan/mengisi nilai dari variable province.
+     * Return type dari method ini adalah void.
+     * Ada parameter yang digunakan pada method ini, yaitu province.
+     * Access modifier pada method berjenis public.
+     *
+     * @param province digunakan sebagai inputan untuk variable province
      */
-    public void setProvince(String province)
-    {
+    public void setProvince(String province) {
         this.province = province;
     }
-    
+
     /**
-     * Sebuah setter untuk mengisi ulang kota dari objek
-     * @param city kota dari lokasi
+     * Sebuah method setter (mutator) yang bernama setCity untuk menetapkan/mengisi nilai dari variable city.
+     * Return type dari method ini adalah void.
+     * Ada parameter yang digunakan pada method ini, yaitu city.
+     * Access modifier pada method berjenis public.
+     *
+     * @param city digunakan sebagai inputan untuk variable city
      */
-    public void setCity(String city)
-    {
+    public void setCity(String city) {
         this.city = city;
     }
-    
+
     /**
-     * Sebuah setter untuk mengisi ulang deskripsi dari objek
-     * @param id deskripsi dari lokasi
+     * Sebuah method setter (mutator) yang bernama setDescription untuk menetapkan/mengisi nilai dari variable description.
+     * Return type dari method ini adalah void.
+     * Ada parameter yang digunakan pada method ini, yaitu description.
+     * Access modifier pada method berjenis public.
+     *
+     * @param description digunakan sebagai inputan untuk variable description
      */
-    public void setDescription(String description)
-    {
+    public void setDescription(String description) {
         this.description = description;
     }
 
+    /**
+     * Method toString, berfungsi untuk mencetak (print) instance variable ke layar.
+     * Ketika Objek atau kelas ini dipanggil untuk di print, maka hasil printnya akan sebuah pesan yang berisikan semua data instance variable.
+     *
+     * @return semua data instance variable ke layar
+     */
     @Override
     public String toString() {
         return "Province = " + getProvince() + "\nCity = " + getCity() + "\nDescription = " + getDescription();

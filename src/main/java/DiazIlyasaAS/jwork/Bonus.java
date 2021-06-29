@@ -1,23 +1,29 @@
+package DiazIlyasaAS.jwork;
 
 /**
- * Merupakan class untuk Bonus
+ * Merupakan class untuk Bonus, akan digunakan untuk mengatur segala data yang terkait dengan bonus pada suatu pekerjaan
  *
  * @author Diaz Ilyasa Azrurrafi Saiful
- * @version 01 Maret 2021
+ * @version 01-03-2021
  */
-
-package DiazIlyasaAS.jwork;
-public class Bonus
-{
-    
+public class Bonus {
+    // Deklarasi beberapa instance variables yang akan digunakan.
     private int id;
     private String referralCode;
     private int extraFee;
     private int minTotalFee;
     private boolean active;
 
-    public Bonus(int id, String referralCode, int extraFee, int minTotalFee, boolean active)
-    {
+    /**
+     * Constructor default kelas Bonus.
+     *
+     * @param id merupakan nilai inputan untuk variable id
+     * @param referralCode merupakan nilai inputan untuk variable referralCode
+     * @param extraFee merupakan nilai inputan untuk variable extraFee
+     * @param minTotalFee merupakan nilai inputan untuk variable minTotalFee
+     * @param active merupakan nilai inputan untuk variable active ('True' or 'False)
+     */
+    public Bonus(int id, String referralCode, int extraFee, int minTotalFee, boolean active) {
         this.id = id;
         this.referralCode = referralCode;
         this.extraFee = extraFee;
@@ -26,64 +32,132 @@ public class Bonus
     }
 
     /**
-     * An example of a method - replace this comment with your own
+     * Sebuah method getter (accessor) yang bernama getId untuk mendapatkan/mengembalikkan data id.
+     * Return type dari method ini adalah int.
+     * Tidak ada parameter yang digunakan pada method ini.
+     * Access modifier pada method berjenis public.
      *
-     * @param   a sample parameter for a method
-     * @return    the sum of x and y
+     * @return id jadi mengembalikkan nilai yang ada didalam variable id
      */
-    public int getId()
-    {
+    public int getId() {
         return id;
     }
 
-    public String getReferralCode()
-    {
+    /**
+     * Sebuah method getter (accessor) yang bernama getReferralCode untuk mendapatkan/mengembalikkan data referralCode.
+     * Return type dari method ini adalah String.
+     * Tidak ada parameter yang digunakan pada method ini.
+     * Access modifier pada method berjenis public.
+     *
+     * @return referralCode jadi mengembalikkan nilai yang ada didalam variable referralCode
+     */
+    public String getReferralCode() {
         return referralCode;
     }
 
-    public int getExtraFee()
-    {
+    /**
+     * Sebuah method getter (accessor) yang bernama getExtraFee untuk mendapatkan/mengembalikkan data extraFee.
+     * Return type dari method ini adalah int.
+     * Tidak ada parameter yang digunakan pada method ini.
+     * Access modifier pada method berjenis public.
+     *
+     * @return extraFee jadi mengembalikkan nilai yang ada didalam variable extraFee
+     */
+    public int getExtraFee() {
         return extraFee;
     }
 
-    public int getMinTotalFee()
-    {
+    /**
+     * Sebuah method getter (accessor) yang bernama getMinTotalFee untuk mendapatkan/mengembalikkan data minTotalFee.
+     * Return type dari method ini adalah int.
+     * Tidak ada parameter yang digunakan pada method ini.
+     * Access modifier pada method berjenis public.
+     *
+     * @return minTotalFee jadi mengembalikkan nilai yang ada didalam variable minTotalFee
+     */
+    public int getMinTotalFee() {
         return minTotalFee;
     }
 
-    public boolean getActive()
-    {
+    /**
+     * Sebuah method getter (accessor) yang bernama getActive untuk mendapatkan/mengembalikkan data id.
+     * Return type dari method ini adalah boolean.
+     * Tidak ada parameter yang digunakan pada method ini.
+     * Access modifier pada method berjenis public.
+     *
+     * @return boolean jadi mengembalikkan nilai yang ada didalam variable active ('True' or 'False')
+     */
+    public boolean getActive() {
         return active;
     }
 
-    public void setId(int id)
-    {
+    /**
+     * Sebuah method setter (mutator) yang bernama setId untuk menetapkan/mengisi nilai dari variable id.
+     * Return type dari method ini adalah void.
+     * Ada parameter yang digunakan pada method ini, yaitu id.
+     * Access modifier pada method berjenis public.
+     *
+     * @param id digunakan sebagai inputan untuk variable id
+     */
+    public void setId(int id) {
         this.id = id;
     }
 
-    public void setReferralCode(String referralCode)
-    {
+    /**
+     * Sebuah method setter (mutator) yang bernama setReferralCode untuk menetapkan/mengisi nilai dari variable referralCode.
+     * Return type dari method ini adalah void.
+     * Ada parameter yang digunakan pada method ini, yaitu referralCode.
+     * Access modifier pada method berjenis public.
+     *
+     * @param referralCode digunakan sebagai inputan untuk variable referralCode
+     */
+    public void setReferralCode(String referralCode) {
         this.referralCode = referralCode;
     }
 
-    public void setExtraFee(int extraFee)
-    {
+    /**
+     * Sebuah method setter (mutator) yang bernama setExtraFee untuk menetapkan/mengisi nilai dari variable extraFee.
+     * Return type dari method ini adalah void.
+     * Ada parameter yang digunakan pada method ini, yaitu extraFee.
+     * Access modifier pada method berjenis public.
+     *
+     * @param extraFee digunakan sebagai inputan untuk variable extraFee
+     */
+    public void setExtraFee(int extraFee) {
         this.extraFee = extraFee;
     }
 
-    public void setMinTotalFee(int minTotalFee)
-    {
+    /**
+     * Sebuah method setter (mutator) yang bernama setMinTotalFee untuk menetapkan/mengisi nilai dari variable minTotalFee.
+     * Return type dari method ini adalah void.
+     * Ada parameter yang digunakan pada method ini, yaitu minTotalFee.
+     * Access modifier pada method berjenis public.
+     *
+     * @param minTotalFee digunakan sebagai inputan untuk variable minTotalFee
+     */
+    public void setMinTotalFee(int minTotalFee) {
         this.minTotalFee = minTotalFee;
     }
 
-    public void setActive(boolean active)
-    {
+    /**
+     * Sebuah method setter (mutator) yang bernama setActive untuk menetapkan/mengisi nilai dari variable active.
+     * Return type dari method ini adalah void.
+     * Ada parameter yang digunakan pada method ini, yaitu active.
+     * Access modifier pada method berjenis public.
+     *
+     * @param active digunakan sebagai inputan untuk variable active ('True' or 'False')
+     */
+    public void setActive(boolean active) {
         this.active = active;
     }
 
+    /**
+     * Method toString, berfungsi untuk mencetak (print) instance variable ke layar
+     *
+     * @return semua isi data instance variable pada kelas ini
+     */
     @Override
-    public String toString() 
-    {
+    public String toString() {
         return "Id = " + getId() + "\nReferral Code = " + getReferralCode() + "\nExtra Fee = " + getExtraFee()
                 + "\nMin Total Fee= " + getMinTotalFee() + "\nActive Status =  " + getActive();
     }

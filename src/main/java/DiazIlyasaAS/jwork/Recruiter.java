@@ -1,30 +1,37 @@
-/**
- * Merupakan class untuk Recruiter yang dapat menambah informasi perekrut.
- *
- * @author Diaz Ilyasa Azrurrafi Saiful
- * @version 01 Maret 2021
- */
-
 package DiazIlyasaAS.jwork;
 
-public class Recruiter
-{
-    private int id;                 //variable id
-    private String name;            //variable name
-    private String email;           //variable email
-    private String phoneNumber;     //variable phoneNumber
-    private Location location;      //variable location
-    
+/**
+ * Kelas Recruiter, dalam kelas ini terdapat beberapa method acessor (get) dan mutator (set).
+ * Serta adanya sebuah method yang bertipe void untuk melakukan printData.
+ * Sesuai dengan nama kelasnya (Recruiter) yang berarti perekrut, sepertinya akan digunakan untuk mengatur segala data yang terkait dengan informasi perekrut atau rekrut pegawai.
+ * Didalam kelas ini juga ada beberapa access modifier (public dan private) yang digunakan pada variable, method, atau constructor.
+ * Access Modifier bersifat public berarti dapat diakses oleh kelas dari mana saja termasuk subclass.
+ * Access Modifier bersifat private berarti hanya dapat diakses didalam kelas itu sendiri saja.
+ *
+ * @author Diaz Ilyasa Azrurrafi Saiful
+ * @version 01-03-2021
+ */
+public class Recruiter {
+    // Access Modifier variable di set private.
+    private int id;
+    private String name;
+    private String email;
+    private String phoneNumber;
+    private Location location;
+
     /**
-     * Untuk membuat objek baru
-     @param id id perekrut
-     @param name nama perekrut
-     @param email email perekrut
-     @param phoneNumber nomor hp perekrut
-     @param location data dari class Location
+     * Sebuah Constructor default yang bernama Recruiter.
+     * Access Modifier pada constrcutor ini berjenis public.
+     * Parameter digunakan sebagai nilai inputan suatu fungsi ketika fungsi tersebut didefinisikan.
+     * Ada beberapa parameter yang digunakan untuk konstruktor ini, yang dapat langsung dilihat dibawah.
+     *
+     * @param id merupakan nilai inputan untuk variable id
+     * @param name  merupakan nilai inputan untuk variable name
+     * @param email  merupakan nilai inputan untuk variable email
+     * @param phoneNumber merupakan nilai inputan untuk variable phoneNumber
+     * @param location merupakan nilai inputan untuk variable location
      */
-    public Recruiter(int id, String name, String email, String phoneNumber, Location location)
-    {
+    public Recruiter(int id, String name, String email, String phoneNumber, Location location) {
         this.id = id;
         this.email = email;
         this.name = name;
@@ -33,95 +40,131 @@ public class Recruiter
     }
 
     /**
-     * Sebuah getter untuk mendapatkan data id
-     * @return objek id
+     * Sebuah method getter (accessor) yang bernama getId untuk mendapatkan/mengembalikkan data id.
+     * Return type dari method ini adalah int.
+     * Tidak ada parameter yang digunakan pada method ini.
+     * Access modifier pada method berjenis public.
+     *
+     * @return id jadi mengembalikkan nilai yang ada didalam variable id
      */
-    public int getId()
-    {
+    public int getId() {
         return id;
     }
-    
+
     /**
-     * Sebuah getter untuk mendapatkan data name
-     * @return objek name
+     * Sebuah method getter (accessor) yang bernama getName untuk mendapatkan/mengembalikkan data name.
+     * Return type dari method ini adalah String.
+     * Tidak ada parameter yang digunakan pada method ini.
+     * Access modifier pada method berjenis public.
+     *
+     * @return name jadi mengembalikkan nilai yang ada didalam variable name
      */
-    public String getName()
-    {
+    public String getName() {
         return name;
     }
 
     /**
-     * Sebuah getter untuk mendapatkan data email
-     * @return objek email
-     */      
-    public String getEmail()
-    {
+     * Sebuah method getter (accessor) yang bernama getEmail untuk mendapatkan/mengembalikkan data email.
+     * Return type dari method ini adalah String.
+     * Tidak ada parameter yang digunakan pada method ini.
+     * Access modifier pada method berjenis public.
+     *
+     * @return email jadi mengembalikkan nilai yang ada didalam variable email
+     */
+    public String getEmail() {
         return email;
     }
 
     /**
-     * Sebuah getter untuk mendapatkan data phoneNumber
-     * @return objek phoneNumber
+     * Sebuah method getter (accessor) yang bernama getPhoneNumber untuk mendapatkan/mengembalikkan data phonenumber.
+     * Return type dari method ini adalah String.
+     * Tidak ada parameter yang digunakan pada method ini.
+     * Access modifier pada method berjenis public.
+     *
+     * @return phoneNumber jadi mengembalikkan nilai yang ada didalam variable phoneNumber
      */
-    public String getPhoneNumber()
-    {
+    public String getPhoneNumber() {
         return phoneNumber;
     }
-    
+
     /**
-     * Sebuah getter untuk mendapatkan data dari class Location
-     * @return objek location
+     * Sebuah method getter (accessor) yang bernama getLocation untuk mendapatkan/mengembalikkan data location.
+     * Return type dari method ini adalah Location (yang merupakan kelas).
+     * Tidak ada parameter yang digunakan pada method ini.
+     * Access modifier pada method berjenis public.
+     *
+     * @return location jadi mengembalikkan nilai yang ada didalam variable location
      */
-    public Location getLocation()
-    {
+    public Location getLocation() {
         return location;
     }
 
     /**
-     * Sebuah setter untuk mengisi ulang id dari objek
-     * @param id id dari perekrut
+     * Sebuah method setter (mutator) yang bernama setId untuk menetapkan/mengisi nilai dari variable id.
+     * Return type dari method ini adalah void.
+     * Ada parameter yang digunakan pada method ini, yaitu id.
+     * Access modifier pada method berjenis public.
+     *
+     * @param id digunakan sebagai inputan untuk variable id
      */
-    public void setid(int id)
-    {
+    public void setid(int id) {
         this.id = id;
     }
 
     /**
-     * Sebuah setter untuk mengisi ulang email dari objek
-     * @param email email dari perekrut
+     * Sebuah method setter (mutator) yang bernama setEmail untuk menetapkan/mengisi nilai dari variable email.
+     * Return type dari method ini adalah void.
+     * Ada parameter yang digunakan pada method ini, yaitu email.
+     * Access modifier pada method berjenis public.
+     *
+     * @param email digunakan sebagai inputan untuk variable email
      */
-    public void setEmail(String email)
-    {
+    public void setEmail(String email) {
         this.email = email;
     }
 
     /**
-     * Sebuah setter untuk mengisi ulang nama dari objek
-     * @param name nama dari perekrut
+     * Sebuah method setter (mutator) yang bernama setName untuk menetapkan/mengisi nilai dari variable name.
+     * Return type dari method ini adalah void.
+     * Ada parameter yang digunakan pada method ini, yaitu name.
+     * Access modifier pada method berjenis public.
+     *
+     * @param name digunakan sebagai inputan untuk variable name
      */
-    public void setName(String name)
-    {
+    public void setName(String name) {
         this.name = name;
     }
 
     /**
-     * Sebuah setter untuk mengisi ulang nomor HP dari objek
-     * @param phoneNumber nomor HP dari perekrut
+     * Sebuah method setter (mutator) yang bernama setPhoneNumber untuk menetapkan/mengisi nilai dari variable phoneNumber.
+     * Return type dari method ini adalah void.
+     * Ada parameter yang digunakan pada method ini, yaitu phoneNumber.
+     * Access modifier pada method berjenis public.
+     *
+     * @param phoneNumber digunakan sebagai inputan untuk variable phoneNumber
      */
-    public void setPhoneNumber(String phoneNumber)
-    {
+    public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 
     /**
-     * Sebuah setter untuk mengganti data yang diambil dari class Location
-     * @param location lokasi perekrut
+     * Sebuah method setter (mutator) yang bernama setLocation untuk menetapkan/mengisi nilai dari variable Location.
+     * Return type dari method ini adalah void.
+     * Ada parameter yang digunakan pada method ini, yaitu location.
+     * Access modifier pada method berjenis public.
+     *
+     * @param location digunakan sebagai inputan untuk variable location
      */
-    public void setLocation(Location location)
-    {
+    public void setLocation(Location location) {
         this.location = location;
     }
 
+    /**
+     * Method toString, berfungsi untuk mencetak (print) instance variable ke layar.
+     * Ketika Objek atau kelas ini dipanggil untuk di print, maka hasil printnya akan sebuah pesan yang berisikan semua data instance variable.
+     *
+     * @return semua data instance variable ke layar
+     */
     @Override
     public String toString() {
         return "Id = " + getId() + "\nNama = " + getName() + "\nEmail = " + getEmail() + "\nPhone Number = "
